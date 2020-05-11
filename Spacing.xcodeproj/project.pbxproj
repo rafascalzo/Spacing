@@ -1,0 +1,842 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8926C4552467AFA3009E492F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4542467AFA3009E492F /* AppDelegate.swift */; };
+		8926C45E2467AFA7009E492F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8926C45D2467AFA7009E492F /* Assets.xcassets */; };
+		8926C4612467AFA7009E492F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926C45F2467AFA7009E492F /* LaunchScreen.storyboard */; };
+		8926C46D2467B1F0009E492F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8926C46C2467B1F0009E492F /* Default-568h@2x.png */; };
+		8926C4702467B5EA009E492F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C46E2467B5EA009E492F /* MainView.swift */; };
+		8926C4712467B5EA009E492F /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8926C46F2467B5EA009E492F /* MainView.xib */; };
+		8926C4742467B856009E492F /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4722467B856009E492F /* MainCell.swift */; };
+		8926C4752467B856009E492F /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8926C4732467B856009E492F /* MainCell.xib */; };
+		8926C47A2467BE85009E492F /* UIRoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4792467BE85009E492F /* UIRoundedImageView.swift */; };
+		8926C4812467DD93009E492F /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C47F2467DD93009E492F /* MainHeaderCell.swift */; };
+		8926C4822467DD93009E492F /* MainHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8926C4802467DD93009E492F /* MainHeaderCell.xib */; };
+		8926C48424686259009E492F /* UIRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C48324686259009E492F /* UIRoundedView.swift */; };
+		8926C494246868F4009E492F /* NASAAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C493246868F4009E492F /* NASAAPI.swift */; };
+		8926C4962468691E009E492F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4952468691E009E492F /* Network.swift */; };
+		8926C498246869C4009E492F /* URLComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C497246869C4009E492F /* URLComposer.swift */; };
+		8926C49A24686B1B009E492F /* NASAAPI.PictureOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C49924686B1B009E492F /* NASAAPI.PictureOfTheDay.swift */; };
+		8926C49C24686B53009E492F /* NASAAPI.Curiosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C49B24686B53009E492F /* NASAAPI.Curiosity.swift */; };
+		8926C49E24686B8A009E492F /* RequestQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C49D24686B8A009E492F /* RequestQueue.swift */; };
+		8926C4A024686BE5009E492F /* NASAAPI.ImageAndVideoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C49F24686BE5009E492F /* NASAAPI.ImageAndVideoLibrary.swift */; };
+		8926C4A924686CE5009E492F /* MarsEarthDateQueryingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4A824686CE5009E492F /* MarsEarthDateQueryingParameters.swift */; };
+		8926C4AB24686D09009E492F /* MartianSolInputParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4AA24686D09009E492F /* MartianSolInputParameters.swift */; };
+		8926C4B424686DA0009E492F /* LibrarySearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4B324686DA0009E492F /* LibrarySearchParameters.swift */; };
+		8926C4B624686DD3009E492F /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4B524686DD3009E492F /* UserDefaultsManager.swift */; };
+		8926C4B824686E1F009E492F /* PictureOfTheDayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4B724686E1F009E492F /* PictureOfTheDayProtocols.swift */; };
+		8926C4BB24686E56009E492F /* PictureOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4B924686E56009E492F /* PictureOfTheDayView.swift */; };
+		8926C4BC24686E56009E492F /* PictureOfTheDayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8926C4BA24686E56009E492F /* PictureOfTheDayView.xib */; };
+		8926C4BE24686E86009E492F /* PictureOfTheDayWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4BD24686E86009E492F /* PictureOfTheDayWireframe.swift */; };
+		8926C4C024686EC0009E492F /* PictureOfTheDayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4BF24686EC0009E492F /* PictureOfTheDayPresenter.swift */; };
+		8926C4C224686EF5009E492F /* PictureOfTheDayInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4C124686EF5009E492F /* PictureOfTheDayInputInteractor.swift */; };
+		8926C4C524686F4F009E492F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4C424686F4F009E492F /* UIViewController.swift */; };
+		8926C4C724687052009E492F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4C624687052009E492F /* String+Extensions.swift */; };
+		8926C4C92468718A009E492F /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4C82468718A009E492F /* MainProtocols.swift */; };
+		8926C4CB246871DA009E492F /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4CA246871DA009E492F /* Scene.swift */; };
+		8926C4CD2468722E009E492F /* MainInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4CC2468722E009E492F /* MainInputInteractor.swift */; };
+		8926C4CF24687279009E492F /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4CE24687279009E492F /* MainPresenter.swift */; };
+		8926C4D1246872D1009E492F /* MainWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926C4D0246872D1009E492F /* MainWireframe.swift */; };
+		8926C4D62468B36D009E492F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8926C4D82468B36D009E492F /* Localizable.strings */; };
+		8949629C2468FC440023ADB2 /* MarsRoverProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949629B2468FC440023ADB2 /* MarsRoverProtocols.swift */; };
+		8949629F2468FCD70023ADB2 /* MarsRoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949629D2468FCD70023ADB2 /* MarsRoverView.swift */; };
+		894962A02468FCD70023ADB2 /* MarsRoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8949629E2468FCD70023ADB2 /* MarsRoverView.xib */; };
+		894962A22468FD470023ADB2 /* MarsRoverInputInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894962A12468FD470023ADB2 /* MarsRoverInputInteractor.swift */; };
+		894962A42468FD7C0023ADB2 /* MarsRoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894962A32468FD7C0023ADB2 /* MarsRoverPresenter.swift */; };
+		894962A62468FDB90023ADB2 /* MarsRoverWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894962A52468FDB90023ADB2 /* MarsRoverWireframe.swift */; };
+		894962A82468FF0F0023ADB2 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894962A72468FF0F0023ADB2 /* Date+Extensions.swift */; };
+		894962AB2468FFAB0023ADB2 /* MarsRoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894962A92468FFAB0023ADB2 /* MarsRoverCell.swift */; };
+		894962AC2468FFAB0023ADB2 /* MarsRoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894962AA2468FFAB0023ADB2 /* MarsRoverCell.xib */; };
+		A86B98B781A6A18D35C95D39 /* libPods-Spacing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AEBA31F8476EDD26601979 /* libPods-Spacing.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A580EB3CE4A3E626F0660B6 /* Pods-Spacing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacing.debug.xcconfig"; path = "Target Support Files/Pods-Spacing/Pods-Spacing.debug.xcconfig"; sourceTree = "<group>"; };
+		49AEBA31F8476EDD26601979 /* libPods-Spacing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spacing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		720FEEDC0BAD5E8A6BAD633C /* Pods-Spacing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacing.release.xcconfig"; path = "Target Support Files/Pods-Spacing/Pods-Spacing.release.xcconfig"; sourceTree = "<group>"; };
+		8926C4512467AFA3009E492F /* Spacing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8926C4542467AFA3009E492F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8926C45D2467AFA7009E492F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8926C4602467AFA7009E492F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8926C4622467AFA7009E492F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8926C46C2467B1F0009E492F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8926C46E2467B5EA009E492F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8926C46F2467B5EA009E492F /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		8926C4722467B856009E492F /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		8926C4732467B856009E492F /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
+		8926C4792467BE85009E492F /* UIRoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundedImageView.swift; sourceTree = "<group>"; };
+		8926C47F2467DD93009E492F /* MainHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderCell.swift; sourceTree = "<group>"; };
+		8926C4802467DD93009E492F /* MainHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderCell.xib; sourceTree = "<group>"; };
+		8926C48324686259009E492F /* UIRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundedView.swift; sourceTree = "<group>"; };
+		8926C493246868F4009E492F /* NASAAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPI.swift; sourceTree = "<group>"; };
+		8926C4952468691E009E492F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		8926C497246869C4009E492F /* URLComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComposer.swift; sourceTree = "<group>"; };
+		8926C49924686B1B009E492F /* NASAAPI.PictureOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPI.PictureOfTheDay.swift; sourceTree = "<group>"; };
+		8926C49B24686B53009E492F /* NASAAPI.Curiosity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPI.Curiosity.swift; sourceTree = "<group>"; };
+		8926C49D24686B8A009E492F /* RequestQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestQueue.swift; sourceTree = "<group>"; };
+		8926C49F24686BE5009E492F /* NASAAPI.ImageAndVideoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPI.ImageAndVideoLibrary.swift; sourceTree = "<group>"; };
+		8926C4A824686CE5009E492F /* MarsEarthDateQueryingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsEarthDateQueryingParameters.swift; sourceTree = "<group>"; };
+		8926C4AA24686D09009E492F /* MartianSolInputParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartianSolInputParameters.swift; sourceTree = "<group>"; };
+		8926C4B324686DA0009E492F /* LibrarySearchParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySearchParameters.swift; sourceTree = "<group>"; };
+		8926C4B524686DD3009E492F /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8926C4B724686E1F009E492F /* PictureOfTheDayProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayProtocols.swift; sourceTree = "<group>"; };
+		8926C4B924686E56009E492F /* PictureOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayView.swift; sourceTree = "<group>"; };
+		8926C4BA24686E56009E492F /* PictureOfTheDayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureOfTheDayView.xib; sourceTree = "<group>"; };
+		8926C4BD24686E86009E492F /* PictureOfTheDayWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayWireframe.swift; sourceTree = "<group>"; };
+		8926C4BF24686EC0009E492F /* PictureOfTheDayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayPresenter.swift; sourceTree = "<group>"; };
+		8926C4C124686EF5009E492F /* PictureOfTheDayInputInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureOfTheDayInputInteractor.swift; sourceTree = "<group>"; };
+		8926C4C424686F4F009E492F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8926C4C624687052009E492F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		8926C4C82468718A009E492F /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
+		8926C4CA246871DA009E492F /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		8926C4CC2468722E009E492F /* MainInputInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInputInteractor.swift; sourceTree = "<group>"; };
+		8926C4CE24687279009E492F /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		8926C4D0246872D1009E492F /* MainWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWireframe.swift; sourceTree = "<group>"; };
+		8926C4D72468B36D009E492F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8926C4D92468B384009E492F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8926C4DA2468B384009E492F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8949629B2468FC440023ADB2 /* MarsRoverProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverProtocols.swift; sourceTree = "<group>"; };
+		8949629D2468FCD70023ADB2 /* MarsRoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverView.swift; sourceTree = "<group>"; };
+		8949629E2468FCD70023ADB2 /* MarsRoverView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarsRoverView.xib; sourceTree = "<group>"; };
+		894962A12468FD470023ADB2 /* MarsRoverInputInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverInputInteractor.swift; sourceTree = "<group>"; };
+		894962A32468FD7C0023ADB2 /* MarsRoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPresenter.swift; sourceTree = "<group>"; };
+		894962A52468FDB90023ADB2 /* MarsRoverWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverWireframe.swift; sourceTree = "<group>"; };
+		894962A72468FF0F0023ADB2 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		894962A92468FFAB0023ADB2 /* MarsRoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverCell.swift; sourceTree = "<group>"; };
+		894962AA2468FFAB0023ADB2 /* MarsRoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarsRoverCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8926C44E2467AFA3009E492F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A86B98B781A6A18D35C95D39 /* libPods-Spacing.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8926C4482467AFA3009E492F = {
+			isa = PBXGroup;
+			children = (
+				8926C46C2467B1F0009E492F /* Default-568h@2x.png */,
+				8926C4532467AFA3009E492F /* Spacing */,
+				8926C4522467AFA3009E492F /* Products */,
+				F5A4A8A03FA4F47ABE0AB454 /* Pods */,
+				A684C6C09B872DA0667962F1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8926C4522467AFA3009E492F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4512467AFA3009E492F /* Spacing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8926C4532467AFA3009E492F /* Spacing */ = {
+			isa = PBXGroup;
+			children = (
+				8926C492246868D9009E492F /* Service */,
+				8926C47B2467D176009E492F /* Protocols */,
+				8926C4762467BBBF009E492F /* Utils */,
+				8926C4692467B01B009E492F /* Resources */,
+				8926C4682467AFC1009E492F /* Main */,
+				8926C485246866D2009E492F /* PictureOfTheDay */,
+				8926C4A124686C8C009E492F /* Mars Rover */,
+				8926C4AC24686D4F009E492F /* Image And Video Library */,
+			);
+			path = Spacing;
+			sourceTree = "<group>";
+		};
+		8926C4682467AFC1009E492F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8926C48B24686871009E492F /* View */,
+				8926C48A24686868009E492F /* Interactor */,
+				8926C48924686860009E492F /* Presenter */,
+				8926C48824686851009E492F /* Entiry */,
+				8926C48724686828009E492F /* Wireframe */,
+				8926C48624686821009E492F /* Protocols */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8926C4692467B01B009E492F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4542467AFA3009E492F /* AppDelegate.swift */,
+				8926C45F2467AFA7009E492F /* LaunchScreen.storyboard */,
+				8926C45D2467AFA7009E492F /* Assets.xcassets */,
+				8926C4622467AFA7009E492F /* Info.plist */,
+				8926C4D82468B36D009E492F /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8926C4762467BBBF009E492F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4C324686F38009E492F /* Extensions */,
+				8926C4792467BE85009E492F /* UIRoundedImageView.swift */,
+				8926C48324686259009E492F /* UIRoundedView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8926C47B2467D176009E492F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8926C485246866D2009E492F /* PictureOfTheDay */ = {
+			isa = PBXGroup;
+			children = (
+				8926C491246868AC009E492F /* View */,
+				8926C490246868A2009E492F /* Interactor */,
+				8926C48F24686899009E492F /* Presenter */,
+				8926C48E24686893009E492F /* Entity */,
+				8926C48D2468688B009E492F /* Wireframe */,
+				8926C48C24686884009E492F /* Protocols */,
+			);
+			path = PictureOfTheDay;
+			sourceTree = "<group>";
+		};
+		8926C48624686821009E492F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4C82468718A009E492F /* MainProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8926C48724686828009E492F /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4D0246872D1009E492F /* MainWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		8926C48824686851009E492F /* Entiry */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4CA246871DA009E492F /* Scene.swift */,
+			);
+			path = Entiry;
+			sourceTree = "<group>";
+		};
+		8926C48924686860009E492F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4CE24687279009E492F /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8926C48A24686868009E492F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4CC2468722E009E492F /* MainInputInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8926C48B24686871009E492F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				894962AE246900A20023ADB2 /* Main CollectionView */,
+				894962AD246900800023ADB2 /* Main Cell */,
+				8926C47F2467DD93009E492F /* MainHeaderCell.swift */,
+				8926C4802467DD93009E492F /* MainHeaderCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8926C48C24686884009E492F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4B724686E1F009E492F /* PictureOfTheDayProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8926C48D2468688B009E492F /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4BD24686E86009E492F /* PictureOfTheDayWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		8926C48E24686893009E492F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8926C48F24686899009E492F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4BF24686EC0009E492F /* PictureOfTheDayPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8926C490246868A2009E492F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4C124686EF5009E492F /* PictureOfTheDayInputInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8926C491246868AC009E492F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4B924686E56009E492F /* PictureOfTheDayView.swift */,
+				8926C4BA24686E56009E492F /* PictureOfTheDayView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8926C492246868D9009E492F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8926C493246868F4009E492F /* NASAAPI.swift */,
+				8926C4952468691E009E492F /* Network.swift */,
+				8926C497246869C4009E492F /* URLComposer.swift */,
+				8926C49924686B1B009E492F /* NASAAPI.PictureOfTheDay.swift */,
+				8926C49B24686B53009E492F /* NASAAPI.Curiosity.swift */,
+				8926C49D24686B8A009E492F /* RequestQueue.swift */,
+				8926C49F24686BE5009E492F /* NASAAPI.ImageAndVideoLibrary.swift */,
+				8926C4B524686DD3009E492F /* UserDefaultsManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8926C4A124686C8C009E492F /* Mars Rover */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4A724686CBE009E492F /* View */,
+				8926C4A624686CB6009E492F /* Interactor */,
+				8926C4A524686CAA009E492F /* Presenter */,
+				8926C4A424686CA4009E492F /* Entity */,
+				8926C4A324686C9B009E492F /* Router */,
+				8926C4A224686C95009E492F /* Protocols */,
+			);
+			path = "Mars Rover";
+			sourceTree = "<group>";
+		};
+		8926C4A224686C95009E492F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8949629B2468FC440023ADB2 /* MarsRoverProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8926C4A324686C9B009E492F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				894962A52468FDB90023ADB2 /* MarsRoverWireframe.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8926C4A424686CA4009E492F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4A824686CE5009E492F /* MarsEarthDateQueryingParameters.swift */,
+				8926C4AA24686D09009E492F /* MartianSolInputParameters.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8926C4A524686CAA009E492F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				894962A32468FD7C0023ADB2 /* MarsRoverPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8926C4A624686CB6009E492F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				894962A12468FD470023ADB2 /* MarsRoverInputInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8926C4A724686CBE009E492F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8949629D2468FCD70023ADB2 /* MarsRoverView.swift */,
+				8949629E2468FCD70023ADB2 /* MarsRoverView.xib */,
+				894962A92468FFAB0023ADB2 /* MarsRoverCell.swift */,
+				894962AA2468FFAB0023ADB2 /* MarsRoverCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8926C4AC24686D4F009E492F /* Image And Video Library */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4B224686D77009E492F /* View */,
+				8926C4B124686D71009E492F /* Interactor */,
+				8926C4B024686D6C009E492F /* Presenter */,
+				8926C4AF24686D66009E492F /* Entity */,
+				8926C4AE24686D5F009E492F /* Router */,
+				8926C4AD24686D59009E492F /* Protocols */,
+			);
+			path = "Image And Video Library";
+			sourceTree = "<group>";
+		};
+		8926C4AD24686D59009E492F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8926C4AE24686D5F009E492F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8926C4AF24686D66009E492F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4B324686DA0009E492F /* LibrarySearchParameters.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		8926C4B024686D6C009E492F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8926C4B124686D71009E492F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8926C4B224686D77009E492F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8926C4C324686F38009E492F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4C424686F4F009E492F /* UIViewController.swift */,
+				8926C4C624687052009E492F /* String+Extensions.swift */,
+				894962A72468FF0F0023ADB2 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		894962AD246900800023ADB2 /* Main Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8926C4722467B856009E492F /* MainCell.swift */,
+				8926C4732467B856009E492F /* MainCell.xib */,
+			);
+			path = "Main Cell";
+			sourceTree = "<group>";
+		};
+		894962AE246900A20023ADB2 /* Main CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8926C46E2467B5EA009E492F /* MainView.swift */,
+				8926C46F2467B5EA009E492F /* MainView.xib */,
+			);
+			path = "Main CollectionView";
+			sourceTree = "<group>";
+		};
+		A684C6C09B872DA0667962F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49AEBA31F8476EDD26601979 /* libPods-Spacing.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5A4A8A03FA4F47ABE0AB454 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A580EB3CE4A3E626F0660B6 /* Pods-Spacing.debug.xcconfig */,
+				720FEEDC0BAD5E8A6BAD633C /* Pods-Spacing.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8926C4502467AFA3009E492F /* Spacing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8926C4652467AFA7009E492F /* Build configuration list for PBXNativeTarget "Spacing" */;
+			buildPhases = (
+				65D5087EC37FB261CF509669 /* [CP] Check Pods Manifest.lock */,
+				8926C44D2467AFA3009E492F /* Sources */,
+				8926C44E2467AFA3009E492F /* Frameworks */,
+				8926C44F2467AFA3009E492F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spacing;
+			productName = Spacing;
+			productReference = 8926C4512467AFA3009E492F /* Spacing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8926C4492467AFA3009E492F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = rvsm;
+				TargetAttributes = {
+					8926C4502467AFA3009E492F = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 8926C44C2467AFA3009E492F /* Build configuration list for PBXProject "Spacing" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"pt-BR",
+			);
+			mainGroup = 8926C4482467AFA3009E492F;
+			productRefGroup = 8926C4522467AFA3009E492F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8926C4502467AFA3009E492F /* Spacing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8926C44F2467AFA3009E492F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8926C46D2467B1F0009E492F /* Default-568h@2x.png in Resources */,
+				8926C4822467DD93009E492F /* MainHeaderCell.xib in Resources */,
+				894962A02468FCD70023ADB2 /* MarsRoverView.xib in Resources */,
+				8926C4712467B5EA009E492F /* MainView.xib in Resources */,
+				8926C4612467AFA7009E492F /* LaunchScreen.storyboard in Resources */,
+				8926C4BC24686E56009E492F /* PictureOfTheDayView.xib in Resources */,
+				8926C4D62468B36D009E492F /* Localizable.strings in Resources */,
+				894962AC2468FFAB0023ADB2 /* MarsRoverCell.xib in Resources */,
+				8926C45E2467AFA7009E492F /* Assets.xcassets in Resources */,
+				8926C4752467B856009E492F /* MainCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65D5087EC37FB261CF509669 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spacing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8926C44D2467AFA3009E492F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8926C4AB24686D09009E492F /* MartianSolInputParameters.swift in Sources */,
+				8926C4C024686EC0009E492F /* PictureOfTheDayPresenter.swift in Sources */,
+				8926C47A2467BE85009E492F /* UIRoundedImageView.swift in Sources */,
+				8926C4B624686DD3009E492F /* UserDefaultsManager.swift in Sources */,
+				8926C4CB246871DA009E492F /* Scene.swift in Sources */,
+				894962A22468FD470023ADB2 /* MarsRoverInputInteractor.swift in Sources */,
+				8926C4D1246872D1009E492F /* MainWireframe.swift in Sources */,
+				894962AB2468FFAB0023ADB2 /* MarsRoverCell.swift in Sources */,
+				8926C4C724687052009E492F /* String+Extensions.swift in Sources */,
+				8926C49C24686B53009E492F /* NASAAPI.Curiosity.swift in Sources */,
+				8926C4B824686E1F009E492F /* PictureOfTheDayProtocols.swift in Sources */,
+				8926C4C524686F4F009E492F /* UIViewController.swift in Sources */,
+				8926C4552467AFA3009E492F /* AppDelegate.swift in Sources */,
+				8926C4962468691E009E492F /* Network.swift in Sources */,
+				8926C498246869C4009E492F /* URLComposer.swift in Sources */,
+				8926C4A024686BE5009E492F /* NASAAPI.ImageAndVideoLibrary.swift in Sources */,
+				8949629F2468FCD70023ADB2 /* MarsRoverView.swift in Sources */,
+				894962A62468FDB90023ADB2 /* MarsRoverWireframe.swift in Sources */,
+				8926C4CD2468722E009E492F /* MainInputInteractor.swift in Sources */,
+				8926C4C224686EF5009E492F /* PictureOfTheDayInputInteractor.swift in Sources */,
+				8926C4B424686DA0009E492F /* LibrarySearchParameters.swift in Sources */,
+				8926C494246868F4009E492F /* NASAAPI.swift in Sources */,
+				8926C49A24686B1B009E492F /* NASAAPI.PictureOfTheDay.swift in Sources */,
+				8926C49E24686B8A009E492F /* RequestQueue.swift in Sources */,
+				894962A82468FF0F0023ADB2 /* Date+Extensions.swift in Sources */,
+				8926C4CF24687279009E492F /* MainPresenter.swift in Sources */,
+				8926C4A924686CE5009E492F /* MarsEarthDateQueryingParameters.swift in Sources */,
+				8926C4C92468718A009E492F /* MainProtocols.swift in Sources */,
+				8926C4702467B5EA009E492F /* MainView.swift in Sources */,
+				8926C4BE24686E86009E492F /* PictureOfTheDayWireframe.swift in Sources */,
+				8926C4BB24686E56009E492F /* PictureOfTheDayView.swift in Sources */,
+				8926C4812467DD93009E492F /* MainHeaderCell.swift in Sources */,
+				8949629C2468FC440023ADB2 /* MarsRoverProtocols.swift in Sources */,
+				894962A42468FD7C0023ADB2 /* MarsRoverPresenter.swift in Sources */,
+				8926C48424686259009E492F /* UIRoundedView.swift in Sources */,
+				8926C4742467B856009E492F /* MainCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8926C45F2467AFA7009E492F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8926C4602467AFA7009E492F /* Base */,
+				8926C4D92468B384009E492F /* pt-BR */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8926C4D82468B36D009E492F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8926C4D72468B36D009E492F /* en */,
+				8926C4DA2468B384009E492F /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8926C4632467AFA7009E492F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8926C4642467AFA7009E492F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8926C4662467AFA7009E492F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A580EB3CE4A3E626F0660B6 /* Pods-Spacing.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BULGWQVW95;
+				INFOPLIST_FILE = Spacing/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github-rafascalzo.Spacing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8926C4672467AFA7009E492F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 720FEEDC0BAD5E8A6BAD633C /* Pods-Spacing.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BULGWQVW95;
+				INFOPLIST_FILE = Spacing/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github-rafascalzo.Spacing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8926C44C2467AFA3009E492F /* Build configuration list for PBXProject "Spacing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8926C4632467AFA7009E492F /* Debug */,
+				8926C4642467AFA7009E492F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8926C4652467AFA7009E492F /* Build configuration list for PBXNativeTarget "Spacing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8926C4662467AFA7009E492F /* Debug */,
+				8926C4672467AFA7009E492F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8926C4492467AFA3009E492F /* Project object */;
+}
