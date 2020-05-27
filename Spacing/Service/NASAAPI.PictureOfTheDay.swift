@@ -22,7 +22,7 @@ extension NASAAPI {
         parameters.append(URLQueryItem(name: "date", value: date))
         parameters.append(URLQueryItem(name: "hd", value: hd.description))
         
-        let url = URLComposer.buildURL(baseUrl: .base, from: .apod, queryParameters: parameters, apiKey: true)
+        let url = URLComposer.buildURL(baseUrl: .base, from: .APOD, queryParameters: parameters, apiKey: true)
         print(url)
         NASAAPI.shared.requestObject(url: url, method: .get, nil, encoding: URLEncoding.default, header: .none, completion: completion)
     }

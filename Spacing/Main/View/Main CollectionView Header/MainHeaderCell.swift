@@ -14,5 +14,4 @@ class MainHeaderCell: UICollectionReusableView {
         super.awakeFromNib()
         // Initialization code
     }
-  
 }

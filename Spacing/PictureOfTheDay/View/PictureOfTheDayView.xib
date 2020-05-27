@@ -15,6 +15,7 @@
                 <outlet property="imageOfTheDayDescriptionTextView" destination="izF-OA-eqI" id="Qjx-35-tfA"/>
                 <outlet property="imageOfTheDayImageView" destination="HU4-aa-eNM" id="gbQ-Kj-JRq"/>
                 <outlet property="imageOfTheDayTitleLabel" destination="UUe-HC-xfM" id="qlA-cF-Rax"/>
+                <outlet property="imageOfTheDayVideoView" destination="QEu-xf-w0A" id="RwZ-pW-cJb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,16 +27,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geh-sO-t3f">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HU4-aa-eNM">
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HU4-aa-eNM">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         </imageView>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEu-xf-w0A">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="HU4-aa-eNM" firstAttribute="top" secondItem="geh-sO-t3f" secondAttribute="top" id="4ik-KK-MVj"/>
                         <constraint firstAttribute="bottom" secondItem="HU4-aa-eNM" secondAttribute="bottom" id="D7n-fF-jHy"/>
+                        <constraint firstAttribute="bottom" secondItem="QEu-xf-w0A" secondAttribute="bottom" id="EoG-6O-REU"/>
+                        <constraint firstItem="QEu-xf-w0A" firstAttribute="top" secondItem="geh-sO-t3f" secondAttribute="top" id="Lga-wp-cIW"/>
                         <constraint firstAttribute="trailing" secondItem="HU4-aa-eNM" secondAttribute="trailing" id="OAw-aO-MYZ"/>
                         <constraint firstItem="HU4-aa-eNM" firstAttribute="leading" secondItem="geh-sO-t3f" secondAttribute="leading" id="SZr-5j-SfB"/>
+                        <constraint firstAttribute="trailing" secondItem="QEu-xf-w0A" secondAttribute="trailing" id="Z77-dy-xIy"/>
+                        <constraint firstItem="QEu-xf-w0A" firstAttribute="leading" secondItem="geh-sO-t3f" secondAttribute="leading" id="e8n-DF-rfw"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This image is a test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUe-HC-xfM">

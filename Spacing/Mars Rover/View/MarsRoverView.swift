@@ -9,12 +9,66 @@
 import UIKit
 
 private let reuseIdentifier = "MarsRoverCell"
+private let cameraReuseIdentifier = "MarsRoverCameraReuseIdentifier"
 
-class MarsRoverView: UICollectionViewController , MarsRoverViewProtocol {
+class MarsRoverView: UIViewController , MarsRoverViewProtocol, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     var presenter: MarsRoverPresenterProtocol?
+    
+    @IBOutlet var calendarImageView: UIImageView!
+    @IBOutlet var searchImageView: UIImageView!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var datePickerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var datePickerToolbar: UIToolbar!
+    @IBOutlet var datePickerToolbarHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var camerasCollectionView: UICollectionView!
+    
     var photos = [RoverPhotosObject]()
+    var cameras = [RoverCamera]()
+    var selectedCamera: RoverCamera?
+    var selectedDate: Date?
+    // MARK: View Life Cycle
+    override func loadView() {
+        super.loadView()
+        let nib = UINib(nibName: "MarsRoverCell", bundle: .main)
+        collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        let cameraNib = UINib(nibName: "MarsCameraCell", bundle: .main)
+        camerasCollectionView.register(cameraNib, forCellWithReuseIdentifier: cameraReuseIdentifier)
+        
+        let calendarTap = UITapGestureRecognizer(target: self, action: #selector(handleCalendarTapped))
+        calendarTap.cancelsTouchesInView = false
+        calendarImageView.addGestureRecognizer(calendarTap)
+        let searchTap = UITapGestureRecognizer(target: self, action: #selector(handleSearchTapped))
+        searchTap.cancelsTouchesInView = false
+        searchImageView.addGestureRecognizer(searchTap)
+        
+        let dismiss = UITapGestureRecognizer(target: self, action: #selector(handleDismissTapped))
+        dismiss.cancelsTouchesInView = false
+        view.addGestureRecognizer(dismiss)
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        MarsRoverWireframe.createModule(viewRef: self)
+        presenter?.viewDidLoad()
+        
+        RoverCamera.allCases.forEach {
+            cameras.append($0)
+        }
+        selectedCamera = RoverCamera.allCases.first
+        selectedDate = Date()
+        camerasCollectionView.reloadData()
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+    }
     
     func render() {
+    
         title = "Mars Rover"
         collectionView.backgroundColor = .white
         //presenter?.fetchByEarthDate(rover: .curiosity, camera: .fhaz, date: nil, page: 1)
@@ -41,52 +95,93 @@ class MarsRoverView: UICollectionViewController , MarsRoverViewProtocol {
         showAlert(message)
     }
     
-    override func loadView() {
-        super.loadView()
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        let nib = UINib(nibName: "MarsRoverCell", bundle: .main)
-        collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+    @objc func handleCalendarTapped(_ sender: Any) {
+        showDatePicker()
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        MarsRoverWireframe.createModule(viewRef: self)
-        presenter?.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    
+    @objc func handleDismissTapped(_ sender: UITapGestureRecognizer) {
+        removeDatePicker()
+    }
+    
+    func removeDatePicker() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            self.datePicker.alpha = 0
+            self.datePickerToolbar.alpha = 0
+            self.datePickerHeightConstraint.constant = 0
+            self.datePickerToolbarHeightConstraint.constant = 0
+        })
+    }
+    
+    func showDatePicker() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+          self.datePicker.alpha = 1
+          self.datePickerHeightConstraint.constant = 200
+          self.datePickerToolbar.alpha = 1
+          self.datePickerToolbarHeightConstraint.constant = 44
+        })
+    }
+    
+    @objc func handleSearchTapped(_ sender: Any) {
+        guard let date = selectedDate else { return }
+        guard let camera = selectedCamera else { return }
+        presenter?.fetchByEarthDate(rover: .curiosity, camera: camera, date: date, page: 1)
+    }
+    
+    // MARK: - IBACTIONS
+    
+    @IBAction func handleOkDatePickerToolbar(_ sender: Any) {
+        selectedDate = datePicker.date
+        removeDatePicker()
+    }
+    
+    @IBAction func handleCancelDatePickerToolbar(_ sender: Any) {
+        removeDatePicker()
     }
 
     // MARK: - Navigation
  
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return photos.count
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.collectionView {
+            return photos.count
+        } else {
+            return cameras.count
+        }
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MarsRoverCell
-    
-        let selected = photos[indexPath.item]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let urlString = selected.imageSource.replacingOccurrences(of: "http", with: "https")
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                let image = UIImage(data: data)
-                cell.cardImageView.image = image
-            } else {
-                cell.cardImageView.image = UIImage(named: "mars_rover")
-            }
+        if collectionView == self.collectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MarsRoverCell
+            
+                let selected = photos[indexPath.item]
+                
+                let urlString = selected.imageSource.replacingOccurrences(of: "http", with: "https")
+                
+                if let img = Cache.fetchImage(named: urlString) {
+                    cell.cardImageView.image = img
+                } else {
+                    Cache.downloadImage(urlString: urlString) {
+                        cell.cardImageView.image = $0
+                    }
+                }
+                return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cameraReuseIdentifier, for: indexPath) as! MarsCameraCell
+            
+            cell.cameraNameLabel.text = cameras[indexPath.item].value
+            let mask = CAShapeLayer()
+            let path = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: 17, height: 17))
+            mask.path = path.cgPath
+            cell.layer.masksToBounds = true
+            cell.layer.mask = mask
+            return cell
         }
-    
-        return cell
     }
 
     // MARK: UICollectionViewDelegate
@@ -120,10 +215,37 @@ class MarsRoverView: UICollectionViewController , MarsRoverViewProtocol {
     }
     */
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.collectionView {
+            let cell = collectionView.cellForItem(at: indexPath) as! MarsRoverCell
+            performZoomInFor(startingImageView: cell.cardImageView, imageDescription: "Cell Freeza e Goku")
+        } else {
+            let cell = collectionView.cellForItem(at: indexPath) as! MarsCameraCell
+            cell.backgroundColor = .purple
+            cell.cameraNameLabel.textColor = .white
+            selectedCamera = cameras[indexPath.item]
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == self.collectionView {
+            
+        } else {
+            if let cell = collectionView.cellForItem(at: indexPath) as? MarsCameraCell {
+                cell.backgroundColor = .white
+                cell.cameraNameLabel.textColor = .black
+            }
+        }
+    }
 }
 
 extension MarsRoverView: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 300)
+        if collectionView == self.collectionView {
+            return CGSize(width: view.frame.width, height: 300)
+        } else {
+            return CGSize(width: 100, height: 50)
+        }
     }
 }

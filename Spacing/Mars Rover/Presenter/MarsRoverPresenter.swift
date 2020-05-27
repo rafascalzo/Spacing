@@ -19,10 +19,12 @@ class MarsRoverPresenter: MarsRoverPresenterProtocol {
     }
     
     func fetchByMartianSol(rover: RoverName, camera: RoverCamera?, sol: Int?, page: Int) {
+        view?.showLoading()
         interactor?.fetchByMartianSol(rover: rover, camera: camera, sol: sol, page: page)
     }
     
     func fetchByEarthDate(rover: RoverName, camera: RoverCamera, date: Date?, page: Int) {
+        view?.showLoading()
         interactor?.fetchByEarthDate(rover: rover, camera: camera, date: date, page: page)
     }
     
@@ -34,10 +36,12 @@ class MarsRoverPresenter: MarsRoverPresenterProtocol {
 extension MarsRoverPresenter: MarsRoverOutputInteractorProtocol {
     
     func didFetch(roverPhotos: MarsRoverPhotos) {
+        view?.removeLoading()
         view?.didFetch(roverPhotos: roverPhotos)
     }
     
     func showError(_ message: String) {
+        view?.removeLoading()
         view?.showError(message)
     }
 }

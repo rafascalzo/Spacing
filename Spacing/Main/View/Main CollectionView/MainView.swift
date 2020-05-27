@@ -16,14 +16,17 @@ class MainView: UICollectionViewController, MainViewProtocol {
     
     var presenter: MainPresenterProtocol?
     
-     //var scenes = [[Scene(title: "picture_of_the_day".localized, scene: .PICTURE_OF_THE_DAY, imageName: "nebula")], [Scene(title: "mars_rover".localized, scene: .MARS, imageName: "mars_rover")], [Scene(title: "epic".localized, scene: .EPIC, imageName: "epic")], [Scene(title: "image_and_video_library".localized, scene: .IMAGE_AND_VIDEO_LIBRARY, imageName: "image_and_video_library")]]
+    var scenes = [[Scene(title: "picture_of_the_day".localized, scene: .PICTURE_OF_THE_DAY, imageName: "nebula")], [Scene(title: "mars_rover".localized, scene: .MARS, imageName: "mars_rover")], [Scene(title: "epic".localized, scene: .EPIC, imageName: "epic")],[Scene(title: "earth".localized, scene: .EARTH, imageName: "earth")] , [Scene(title: "image_and_video_library".localized, scene: .IMAGE_AND_VIDEO_LIBRARY, imageName: "image_and_video_library")]]
     
-    var scenes = [[Scene(title: "picture_of_the_day".localized, scene: .PICTURE_OF_THE_DAY, imageName: "nebula")], [Scene(title: "mars_rover".localized, scene: .MARS, imageName: "mars_rover")]]
+    //var scenes = [[Scene(title: "picture_of_the_day".localized, scene: .PICTURE_OF_THE_DAY, imageName: "nebula")], [Scene(title: "mars_rover".localized, scene: .MARS, imageName: "mars_rover")]]
     
     func render() {
-        //
         title = "home".localized
+        
+        //navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blue]
     }
+ 
     
     // MARK: View Lifecycle
     
@@ -34,6 +37,7 @@ class MainView: UICollectionViewController, MainViewProtocol {
         let header = UINib(nibName: "MainHeaderCell", bundle: .main)
         collectionView.register(header, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

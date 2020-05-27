@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpicView" customModule="Spacing" customModuleProvider="target">
+            <connections>
+                <outlet property="datePickerDoneToolBar" destination="zMl-PQ-aM1" id="Wl1-l4-cwB"/>
+                <outlet property="datePickerDoneToolBarHeightConstraint" destination="PNP-QC-8zI" id="WUe-3b-zSk"/>
+                <outlet property="datePickerView" destination="cMS-tC-Dio" id="pNr-Eb-AKB"/>
+                <outlet property="datePickerViewHeightConstraint" destination="YQv-se-BTL" id="dzj-s5-6vk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cMS-tC-Dio">
+                    <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="YQv-se-BTL"/>
+                    </constraints>
+                </datePicker>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMl-PQ-aM1">
+                    <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="PNP-QC-8zI"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Cancel" id="fyw-Eq-g0c" userLabel="cancel">
+                            <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="datePickerCancelToolbar:" destination="-1" id="HOM-VD-Abz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="L4x-ba-bXy"/>
+                        <barButtonItem title="Ok" id="yxn-rf-Msv" userLabel="done">
+                            <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="datePickerViewDoneToolbar:" destination="-1" id="Lku-Ux-Ph9"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="cMS-tC-Dio" secondAttribute="bottom" id="4I8-hP-cxb"/>
+                <constraint firstItem="zMl-PQ-aM1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GVf-eI-vvm"/>
+                <constraint firstItem="cMS-tC-Dio" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Psb-dE-CXx"/>
+                <constraint firstItem="zMl-PQ-aM1" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="afq-VV-tbn"/>
+                <constraint firstItem="cMS-tC-Dio" firstAttribute="top" secondItem="zMl-PQ-aM1" secondAttribute="bottom" id="nzc-aG-Dmr"/>
+                <constraint firstItem="cMS-tC-Dio" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s3L-ar-efz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </view>
+    </objects>
+</document>

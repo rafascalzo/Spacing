@@ -21,11 +21,13 @@ class MainWireframe: MainWireframeProtocol {
             controller?.navigationController?.pushViewController(MarsRoverView(nibName: "MarsRoverView", bundle: .main), animated: true)
             break
         case .IMAGE_AND_VIDEO_LIBRARY:
-            //controller?.navigationController?.pushViewController(ImageAndVideoLibraryView(), animated: true)
+            controller?.navigationController?.pushViewController(ImageAndVideoLibraryView(nibName: "ImageAndVideoLibraryView", bundle: .main), animated: true)
             break
         case .EPIC:
-            //controller?.navigationController?.pushViewController(EpicView(), animated: true)
+            controller?.navigationController?.pushViewController(EpicView(nibName: "EpicView", bundle: .main), animated: true)
             break
+        case .EARTH:
+            controller?.navigationController?.pushViewController(EarthView(nibName: "EarthView", bundle: .main), animated: true)
         default:
             print("nowhere to go", #file, #function, #line)
         }
@@ -44,5 +46,4 @@ class MainWireframe: MainWireframeProtocol {
     deinit {
         print("MainWireframe has removed", #file, #function, #line)
     }
-    
 }
