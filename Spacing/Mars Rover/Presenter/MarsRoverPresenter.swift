@@ -23,7 +23,7 @@ class MarsRoverPresenter: MarsRoverPresenterProtocol {
         interactor?.fetchByMartianSol(rover: rover, camera: camera, sol: sol, page: page)
     }
     
-    func fetchByEarthDate(rover: RoverName, camera: RoverCamera, date: Date?, page: Int) {
+    func fetchByEarthDate(rover: RoverName, camera: RoverCamera?, date: Date?, page: Int) {
         view?.showLoading()
         interactor?.fetchByEarthDate(rover: rover, camera: camera, date: date, page: page)
     }

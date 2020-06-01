@@ -13,7 +13,7 @@ struct MarsEarthDateQueryingParameters: Codable {
     var authenticated: Bool
     var rover: String
     var earthDate: String
-    var camera: String
+    var camera: String?
     var page: Int
     
     private enum CodingKeys: String, CodingKey {

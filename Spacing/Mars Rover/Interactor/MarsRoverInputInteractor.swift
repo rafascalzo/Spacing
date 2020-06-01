@@ -17,26 +17,27 @@ class MarsRoverInputInteractor: MarsRoverInputInteractorProtocol {
     
     weak var output: MarsRoverOutputInteractorProtocol?
     
-    func fetchByEarthDate(rover: RoverName, camera: RoverCamera, date: Date?, page: Int) {
-        if !camera.availableInRovers().contains(rover){
-            self.output?.showError("invalid_camera")
-        } else {
-            var earthDate = ""
-            if let date = date {
-                earthDate = Date.stringValue(from: date, pattern: .yearMonthDay)
-            } else {
-                earthDate = Date.stringValue(from: Date(), pattern: .yearMonthDay)
+    func fetchByEarthDate(rover: RoverName, camera: RoverCamera?, date: Date?, page: Int) {
+        if let camera = camera {
+            guard camera.availableInRovers().contains(rover) else {
+                self.output?.showError("invalid_camera")
+                return
             }
-            let parameters = MarsEarthDateQueryingParameters(authenticated: true, rover: rover.name, earthDate: earthDate, camera: camera.value, page: page)
-            
-            NASAAPI.Curiosity.queryByEarthDate(rover: rover, queryParameters: parameters) { (photos, error) in
-                if let error = error {
-                    print(error)
-                    self.output?.showError(error)
-                } else if let photos = photos {
-                    print("eba")
-                    self.output?.didFetch(roverPhotos: photos)
-                }
+        }
+       var earthDate = ""
+        if let date = date {
+            earthDate = Date.stringValue(from: date, pattern: .yearMonthDay)
+        } else {
+            earthDate = Date.stringValue(from: Date(), pattern: .yearMonthDay)
+        }
+        let parameters = MarsEarthDateQueryingParameters(authenticated: true, rover: rover.name, earthDate: earthDate, camera: camera?.value, page: page)
+        
+        NASAAPI.Curiosity.queryByEarthDate(rover: rover, queryParameters: parameters) { (photos, error) in
+            if let error = error {
+                print(error)
+                self.output?.showError(error)
+            } else if let photos = photos {
+                self.output?.didFetch(roverPhotos: photos)
             }
         }
     }

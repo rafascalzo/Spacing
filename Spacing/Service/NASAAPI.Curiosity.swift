@@ -43,10 +43,17 @@ extension NASAAPI {
         
         static func queryByEarthDate(rover: RoverName, queryParameters: MarsEarthDateQueryingParameters, completion: @escaping MarsRoversCompletion) {
             var url: URLConvertible
-            let earth = URLQueryItem(name: "earth_date", value: "2015-6-3")
-            let camera = URLQueryItem(name: "camera", value: queryParameters.camera)
-            let page = URLQueryItem(name: "page", value: "\(queryParameters.page)")
-            let parameters = [earth, camera, page]
+            
+            var parameters = [URLQueryItem]()
+            
+            parameters.append(URLQueryItem(name: "earth_date", value: queryParameters.earthDate))
+            
+            if let camera = queryParameters.camera {
+                parameters.append(URLQueryItem(name: "camera", value: camera))
+            }
+            
+            parameters.append(URLQueryItem(name: "page", value: "\(queryParameters.page)"))
+         
             switch rover {
             case .curiosity:
                 url = URLComposer.buildURL(baseUrl: .base, from: .MARS_CURIOSITY, queryParameters: parameters, apiKey: queryParameters.authenticated)

@@ -12,14 +12,9 @@ class MainCell: UICollectionViewCell {
 
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var favoriteImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        let image = UIImage(named: "empty_heart")?.withRenderingMode(.alwaysTemplate)
-        favoriteImageView.image = image
-        favoriteImageView.tintColor = .white
     }
-
+    
 }

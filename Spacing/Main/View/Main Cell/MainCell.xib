@@ -27,14 +27,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="440" id="Ua8-rI-bmz"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_heart" translatesAutoresizingMaskIntoConstraints="NO" id="QL0-jO-bQb">
-                                <rect key="frame" x="311" y="8" width="35" height="35"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="VTL-ss-9Ka"/>
-                                    <constraint firstAttribute="width" constant="35" id="i4V-4M-CqN"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Picture of the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grx-fb-lIz">
                                 <rect key="frame" x="22" y="303" width="303" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,9 +45,7 @@
                             <constraint firstAttribute="bottom" secondItem="8xW-ij-Yx3" secondAttribute="bottom" id="GrT-Ub-C6i"/>
                             <constraint firstAttribute="height" constant="450" id="IFg-Hw-YU5"/>
                             <constraint firstItem="8xW-ij-Yx3" firstAttribute="leading" secondItem="55b-nF-SC6" secondAttribute="leading" id="OJQ-LI-kkJ"/>
-                            <constraint firstAttribute="trailing" secondItem="QL0-jO-bQb" secondAttribute="trailing" constant="8" id="VEp-1B-z8z"/>
                             <constraint firstItem="8xW-ij-Yx3" firstAttribute="top" secondItem="55b-nF-SC6" secondAttribute="top" id="WOK-qv-WUA"/>
-                            <constraint firstItem="QL0-jO-bQb" firstAttribute="top" secondItem="55b-nF-SC6" secondAttribute="top" constant="8" id="bAJ-Ge-svs"/>
                             <constraint firstItem="8xW-ij-Yx3" firstAttribute="leading" secondItem="55b-nF-SC6" secondAttribute="leading" id="fMg-ar-Om8"/>
                             <constraint firstAttribute="trailing" secondItem="8xW-ij-Yx3" secondAttribute="trailing" id="tLF-Gd-UHi"/>
                         </constraints>
@@ -142,14 +132,12 @@
             <size key="customSize" width="354" height="598"/>
             <connections>
                 <outlet property="backgroundImageView" destination="8xW-ij-Yx3" id="WdO-B5-Joz"/>
-                <outlet property="favoriteImageView" destination="QL0-jO-bQb" id="d7p-rv-eRU"/>
                 <outlet property="titleLabel" destination="Grx-fb-lIz" id="58G-g8-z9a"/>
             </connections>
             <point key="canvasLocation" x="53.623188405797109" y="28.794642857142854"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="empty_heart" width="512" height="512"/>
         <image name="nebula" width="2339" height="2300"/>
         <image name="nebula1" width="2500" height="2483"/>
     </resources>

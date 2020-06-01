@@ -24,7 +24,7 @@ protocol MarsRoverInputInteractorProtocol: class {
     
     var output: MarsRoverOutputInteractorProtocol? { get set }
     
-    func fetchByEarthDate(rover: RoverName, camera: RoverCamera, date: Date?, page: Int)
+    func fetchByEarthDate(rover: RoverName, camera: RoverCamera?, date: Date?, page: Int)
     func fetchByMartianSol(rover: RoverName, camera: RoverCamera?, sol: Int?, page: Int)
 }
 
@@ -37,7 +37,7 @@ protocol MarsRoverPresenterProtocol: class {
     func viewDidLoad()
     
     func popBack()
-    func fetchByEarthDate(rover: RoverName, camera: RoverCamera, date: Date?, page: Int)
+    func fetchByEarthDate(rover: RoverName, camera: RoverCamera?, date: Date?, page: Int)
     func fetchByMartianSol(rover: RoverName, camera: RoverCamera?, sol: Int?, page: Int)
 }
 

@@ -74,6 +74,12 @@
 		894962E5246A44400023ADB2 /* EarthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894962E4246A44400023ADB2 /* EarthWireframe.swift */; };
 		894962E7246A47940023ADB2 /* EarthImageryQueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894962E6246A47940023ADB2 /* EarthImageryQueryParameters.swift */; };
 		894962E9246A4B8A0023ADB2 /* NASAAPI.Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894962E8246A4B8A0023ADB2 /* NASAAPI.Earth.swift */; };
+		894A2ED12480A24500E2468E /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894A2ED02480A24500E2468E /* UIImageView+Extensions.swift */; };
+		894A2ED42483771900E2468E /* MarsRoverHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894A2ED22483771900E2468E /* MarsRoverHeaderCell.swift */; };
+		894A2ED52483771900E2468E /* MarsRoverHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894A2ED32483771900E2468E /* MarsRoverHeaderCell.xib */; };
+		894A2EDD2484198100E2468E /* MarsRoversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894A2EDB2484198100E2468E /* MarsRoversCell.swift */; };
+		894A2EDE2484198100E2468E /* MarsRoversCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894A2EDC2484198100E2468E /* MarsRoversCell.xib */; };
+		894A2EE02484673500E2468E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894A2EDF2484673500E2468E /* UIColor+Extensions.swift */; };
 		894ABDFD247DEB0A00001270 /* RoverName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ABDFC247DEB0900001270 /* RoverName.swift */; };
 		894ABDFF247DEB3600001270 /* RoverCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894ABDFE247DEB3600001270 /* RoverCamera.swift */; };
 		894ABE01247DED9200001270 /* MarsRoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894ABE00247DED9200001270 /* MarsRoverView.xib */; };
@@ -159,6 +165,12 @@
 		894962E4246A44400023ADB2 /* EarthWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthWireframe.swift; sourceTree = "<group>"; };
 		894962E6246A47940023ADB2 /* EarthImageryQueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageryQueryParameters.swift; sourceTree = "<group>"; };
 		894962E8246A4B8A0023ADB2 /* NASAAPI.Earth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPI.Earth.swift; sourceTree = "<group>"; };
+		894A2ED02480A24500E2468E /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		894A2ED22483771900E2468E /* MarsRoverHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverHeaderCell.swift; sourceTree = "<group>"; };
+		894A2ED32483771900E2468E /* MarsRoverHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarsRoverHeaderCell.xib; sourceTree = "<group>"; };
+		894A2EDB2484198100E2468E /* MarsRoversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoversCell.swift; sourceTree = "<group>"; };
+		894A2EDC2484198100E2468E /* MarsRoversCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarsRoversCell.xib; sourceTree = "<group>"; };
+		894A2EDF2484673500E2468E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		894ABDFC247DEB0900001270 /* RoverName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverName.swift; sourceTree = "<group>"; };
 		894ABDFE247DEB3600001270 /* RoverCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverCamera.swift; sourceTree = "<group>"; };
 		894ABE00247DED9200001270 /* MarsRoverView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarsRoverView.xib; sourceTree = "<group>"; };
@@ -446,12 +458,14 @@
 		8926C4A724686CBE009E492F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				894A2EE22484AE1900E2468E /* Rovers Cell */,
+				894A2EE12484ADD400E2468E /* Camera Cell */,
 				894ABE00247DED9200001270 /* MarsRoverView.xib */,
 				8949629D2468FCD70023ADB2 /* MarsRoverView.swift */,
-				894962A92468FFAB0023ADB2 /* MarsRoverCell.swift */,
 				894962AA2468FFAB0023ADB2 /* MarsRoverCell.xib */,
-				894ABE06247E0E8E00001270 /* MarsCameraCell.swift */,
-				894ABE07247E0E8E00001270 /* MarsCameraCell.xib */,
+				894962A92468FFAB0023ADB2 /* MarsRoverCell.swift */,
+				894A2ED22483771900E2468E /* MarsRoverHeaderCell.swift */,
+				894A2ED32483771900E2468E /* MarsRoverHeaderCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -525,6 +539,8 @@
 				8926C4C624687052009E492F /* String+Extensions.swift */,
 				894962A72468FF0F0023ADB2 /* Date+Extensions.swift */,
 				894962D12469EEE70023ADB2 /* UIVideoView.swift */,
+				894A2ED02480A24500E2468E /* UIImageView+Extensions.swift */,
+				894A2EDF2484673500E2468E /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -679,6 +695,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		894A2EE12484ADD400E2468E /* Camera Cell */ = {
+			isa = PBXGroup;
+			children = (
+				894ABE06247E0E8E00001270 /* MarsCameraCell.swift */,
+				894ABE07247E0E8E00001270 /* MarsCameraCell.xib */,
+			);
+			path = "Camera Cell";
+			sourceTree = "<group>";
+		};
+		894A2EE22484AE1900E2468E /* Rovers Cell */ = {
+			isa = PBXGroup;
+			children = (
+				894A2EDB2484198100E2468E /* MarsRoversCell.swift */,
+				894A2EDC2484198100E2468E /* MarsRoversCell.xib */,
+			);
+			path = "Rovers Cell";
+			sourceTree = "<group>";
+		};
 		894ABDFA247DEAC700001270 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,12 +807,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894A2ED52483771900E2468E /* MarsRoverHeaderCell.xib in Resources */,
 				8926C46D2467B1F0009E492F /* Default-568h@2x.png in Resources */,
 				894962CA2469E7250023ADB2 /* EpicView.xib in Resources */,
 				894962B72469E2FE0023ADB2 /* ImageAndVideoLibraryView.xib in Resources */,
 				8926C4822467DD93009E492F /* MainHeaderCell.xib in Resources */,
 				8926C4712467B5EA009E492F /* MainView.xib in Resources */,
 				894ABE09247E0E8E00001270 /* MarsCameraCell.xib in Resources */,
+				894A2EDE2484198100E2468E /* MarsRoversCell.xib in Resources */,
 				8926C4612467AFA7009E492F /* LaunchScreen.storyboard in Resources */,
 				8926C4BC24686E56009E492F /* PictureOfTheDayView.xib in Resources */,
 				8926C4D62468B36D009E492F /* Localizable.strings in Resources */,
@@ -833,6 +869,7 @@
 				894962E7246A47940023ADB2 /* EarthImageryQueryParameters.swift in Sources */,
 				8926C4CB246871DA009E492F /* Scene.swift in Sources */,
 				894962B12469C13F0023ADB2 /* Cache.swift in Sources */,
+				894A2EDD2484198100E2468E /* MarsRoversCell.swift in Sources */,
 				894962A22468FD470023ADB2 /* MarsRoverInputInteractor.swift in Sources */,
 				8926C4D1246872D1009E492F /* MainWireframe.swift in Sources */,
 				894962E9246A4B8A0023ADB2 /* NASAAPI.Earth.swift in Sources */,
@@ -848,6 +885,7 @@
 				894962BD2469E5C30023ADB2 /* ImageAndVideoLibraryWireframe.swift in Sources */,
 				8926C498246869C4009E492F /* URLComposer.swift in Sources */,
 				8926C4A024686BE5009E492F /* NASAAPI.ImageAndVideoLibrary.swift in Sources */,
+				894A2ED12480A24500E2468E /* UIImageView+Extensions.swift in Sources */,
 				8949629F2468FCD70023ADB2 /* MarsRoverView.swift in Sources */,
 				894962A62468FDB90023ADB2 /* MarsRoverWireframe.swift in Sources */,
 				894962E5246A44400023ADB2 /* EarthWireframe.swift in Sources */,
@@ -861,7 +899,9 @@
 				894962C92469E7250023ADB2 /* EpicView.swift in Sources */,
 				8926C49E24686B8A009E492F /* RequestQueue.swift in Sources */,
 				894962A82468FF0F0023ADB2 /* Date+Extensions.swift in Sources */,
+				894A2ED42483771900E2468E /* MarsRoverHeaderCell.swift in Sources */,
 				8926C4CF24687279009E492F /* MainPresenter.swift in Sources */,
+				894A2EE02484673500E2468E /* UIColor+Extensions.swift in Sources */,
 				894962CE2469E7880023ADB2 /* EpicPresenter.swift in Sources */,
 				894ABDFD247DEB0A00001270 /* RoverName.swift in Sources */,
 				8926C4A924686CE5009E492F /* MarsEarthDateQueryingParameters.swift in Sources */,

@@ -10,11 +10,12 @@ import Foundation
 
 enum DateFormat {
     
-    case yearMonthDay
+    case yearMonthDay, dayMonthYear
     
     func value() -> String {
         switch self {
         case .yearMonthDay: return "yyyy-MM-dd"
+        case .dayMonthYear: return "dd-MM-yyy"
         }
     }
 }

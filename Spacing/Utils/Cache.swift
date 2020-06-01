@@ -38,21 +38,27 @@ class Cache: NSObject {
         if let savedImage = images.object(forKey: urlString as NSString) {
             completion(savedImage)
         } else {
-            if let url = URL(string: urlString) {
-                do {
-                    let data = try Data(contentsOf: url)
-                    if let image = UIImage(data: data){
-                        images.setObject(image, forKey: urlString as NSString)
+            let formatted = urlString.hasPrefix("httpss") ? urlString.replacingOccurrences(of: "httpss", with: "https") : urlString
+            if let url = URL(string: formatted) {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                images.setObject(image, forKey: urlString as NSString)
+                                completion(image)
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                completion(nil)
+                            }
+                        }
                     } else {
-                        print("Failed to get image from data", #file, #function, #line)
-                        completion(nil)
+                        DispatchQueue.main.async {
+                            completion(nil)
+                        }
                     }
-                } catch {
-                    print(error.localizedDescription, #file, #function, #line)
-                    completion(nil)
                 }
             } else {
-                print("Invalid URL", #file, #function, #line)
                 completion(nil)
             }
         }

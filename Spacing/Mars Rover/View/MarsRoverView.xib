@@ -10,15 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MarsRoverView" customModule="Spacing" customModuleProvider="target">
             <connections>
-                <outlet property="calendarImageView" destination="k2A-O9-gUu" id="nUZ-eY-9LN"/>
                 <outlet property="camerasCollectionView" destination="MgF-1v-qUV" id="vj8-Ky-ReT"/>
                 <outlet property="collectionView" destination="A1Y-H1-uJl" id="PXg-E5-hPz"/>
-                <outlet property="dateLabel" destination="y3n-dK-QzV" id="V65-kg-8Gz"/>
                 <outlet property="datePicker" destination="VZB-99-fVa" id="EoQ-53-MzJ"/>
-                <outlet property="datePickerHeightConstraint" destination="Scs-9v-oR5" id="U2C-Tm-UgO"/>
+                <outlet property="datePickerHeightConstraint" destination="ZFZ-6T-Q5A" id="kj4-Wl-gir"/>
                 <outlet property="datePickerToolbar" destination="iGT-rW-WSj" id="uT1-lN-JMg"/>
-                <outlet property="datePickerToolbarHeightConstraint" destination="lMO-DX-qv3" id="Nzv-cs-iS5"/>
-                <outlet property="searchImageView" destination="jf3-8L-Cz6" id="wHd-7a-oOn"/>
+                <outlet property="datePickerToolbarHeightConstraint" destination="7Td-9I-zan" id="tWa-Zd-AP8"/>
+                <outlet property="dateTextField" destination="umy-aW-JOV" id="RdZ-PU-Vh1"/>
+                <outlet property="menuView" destination="Wki-Ao-WI6" id="Z13-Cf-2jR"/>
+                <outlet property="menuWidthConstraint" destination="6wG-Dm-IGC" id="5wp-6i-LYC"/>
+                <outlet property="roversCollectionView" destination="ogp-4V-RCg" id="1Af-x1-str"/>
+                <outlet property="searchButton" destination="zHn-jd-mFY" id="YSM-Ll-mHn"/>
                 <outlet property="view" destination="iN0-l3-epB" id="9AO-C7-SwN"/>
             </connections>
         </placeholder>
@@ -27,66 +29,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5y-fx-LRW">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nebula1" translatesAutoresizingMaskIntoConstraints="NO" id="k2A-O9-gUu">
-                            <rect key="frame" x="15" y="15" width="30" height="30"/>
-                            <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="30" id="2GM-p0-BbF"/>
-                                <constraint firstAttribute="height" constant="30" id="u2b-p3-dz9"/>
-                            </constraints>
-                        </imageView>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nebula" translatesAutoresizingMaskIntoConstraints="NO" id="jf3-8L-Cz6">
-                            <rect key="frame" x="369" y="15" width="30" height="30"/>
-                            <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="kS1-y1-aKn"/>
-                                <constraint firstAttribute="width" constant="30" id="xe2-OD-tnk"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3n-dK-QzV">
-                            <rect key="frame" x="186" y="20" width="42" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="jf3-8L-Cz6" secondAttribute="trailing" constant="15" id="Klh-EC-Fbq"/>
-                        <constraint firstItem="y3n-dK-QzV" firstAttribute="centerY" secondItem="J5y-fx-LRW" secondAttribute="centerY" id="LZB-Wt-4zv"/>
-                        <constraint firstItem="jf3-8L-Cz6" firstAttribute="top" secondItem="J5y-fx-LRW" secondAttribute="top" constant="15" id="Yzb-af-qYq"/>
-                        <constraint firstItem="y3n-dK-QzV" firstAttribute="centerX" secondItem="J5y-fx-LRW" secondAttribute="centerX" id="mYe-kX-AlJ"/>
-                        <constraint firstItem="k2A-O9-gUu" firstAttribute="top" secondItem="J5y-fx-LRW" secondAttribute="top" constant="15" id="vPT-xx-fk5"/>
-                        <constraint firstAttribute="height" constant="60" id="xTL-wL-jbj"/>
-                        <constraint firstItem="k2A-O9-gUu" firstAttribute="leading" secondItem="J5y-fx-LRW" secondAttribute="leading" constant="15" id="yCt-E3-R66"/>
-                    </constraints>
-                </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-1v-qUV">
-                    <rect key="frame" x="0.0" y="60" width="414" height="60"/>
-                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="IRO-RP-8Dl"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D4C-Vj-mjR">
-                        <size key="itemSize" width="100" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="kp9-ZS-DLS"/>
-                        <outlet property="delegate" destination="-1" id="rIO-Ii-2LX"/>
-                    </connections>
-                </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="A1Y-H1-uJl">
-                    <rect key="frame" x="0.0" y="120" width="414" height="654"/>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.80333552919999995" blue="0.25370132909999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J9K-K6-OfS">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="22" minimumInteritemSpacing="22" id="J9K-K6-OfS">
                         <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="headerReferenceSize" width="50" height="50"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
@@ -95,61 +43,166 @@
                         <outlet property="delegate" destination="-1" id="hOa-dh-jbE"/>
                     </connections>
                 </collectionView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGT-rW-WSj">
-                    <rect key="frame" x="0.0" y="774" width="414" height="0.0"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" id="lMO-DX-qv3"/>
-                    </constraints>
-                    <items>
-                        <barButtonItem title="cancel" id="M3b-ko-yAo">
-                            <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wki-Ao-WI6">
+                    <rect key="frame" x="0.0" y="308" width="0.0" height="500"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rovers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0u-4x-6zb">
+                            <rect key="frame" x="-25.5" y="8" width="51" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="8sh-9F-wvk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                            <color key="textColor" red="0.02330312692" green="0.019921306520000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ogp-4V-RCg">
+                            <rect key="frame" x="0.0" y="36" width="0.0" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="TfN-n0-yRv"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="OXi-9O-Tt1">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
                             <connections>
-                                <action selector="handleCancelDatePickerToolbar:" destination="-1" id="Zmv-67-YXW"/>
+                                <outlet property="dataSource" destination="-1" id="8G8-oL-F8w"/>
+                                <outlet property="delegate" destination="-1" id="WkR-Pt-jpZ"/>
                             </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xEP-V5-Urs"/>
-                        <barButtonItem title="ok" id="UHo-rA-Zgd">
-                            <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </collectionView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cameras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-DZ-yy2">
+                            <rect key="frame" x="-33" y="104" width="66" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="SZM-a4-xTT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                            <color key="textColor" red="0.02330312692" green="0.019921306520000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-1v-qUV">
+                            <rect key="frame" x="0.0" y="132" width="0.0" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="707-Zs-J1u"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D4C-Vj-mjR">
+                                <size key="itemSize" width="100" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
                             <connections>
-                                <action selector="handleOkDatePickerToolbar:" destination="-1" id="afo-pR-gZr"/>
+                                <outlet property="dataSource" destination="-1" id="kp9-ZS-DLS"/>
+                                <outlet property="delegate" destination="-1" id="rIO-Ii-2LX"/>
                             </connections>
-                        </barButtonItem>
-                    </items>
-                </toolbar>
-                <datePicker alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VZB-99-fVa">
-                    <rect key="frame" x="0.0" y="774" width="414" height="0.0"/>
+                        </collectionView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="umy-aW-JOV">
+                            <rect key="frame" x="0.0" y="228" width="0.0" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="dU0-ES-VSi"/>
+                            </constraints>
+                            <color key="textColor" red="0.02330312692" green="0.019921306520000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHn-jd-mFY">
+                            <rect key="frame" x="0.0" y="298" width="0.0" height="38"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="17"/>
+                            <state key="normal" title="Apply">
+                                <color key="titleColor" red="0.02330312692" green="0.019921306520000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="searchButtonTapped:" destination="-1" eventType="touchUpInside" id="3hd-BC-BIr"/>
+                            </connections>
+                        </button>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGT-rW-WSj">
+                            <rect key="frame" x="0.0" y="500" width="0.0" height="0.0"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="7Td-9I-zan"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem title="cancel" id="M3b-ko-yAo">
+                                    <color key="tintColor" red="0.02330312692" green="0.019921306520000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="handleCancelDatePickerToolbar:" destination="-1" id="Zmv-67-YXW"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="xEP-V5-Urs"/>
+                                <barButtonItem title="ok" id="UHo-rA-Zgd">
+                                    <color key="tintColor" red="0.02330312692" green="0.019921306520000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="handleOkDatePickerToolbar:" destination="-1" id="afo-pR-gZr"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </toolbar>
+                        <datePicker alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="VZB-99-fVa">
+                            <rect key="frame" x="0.0" y="500" width="0.0" height="0.0"/>
+                            <color key="backgroundColor" red="0.3477752221" green="0.2945547838" blue="0.21816704919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.02330312692" green="0.019921306520000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="ZFZ-6T-Q5A"/>
+                            </constraints>
+                        </datePicker>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-44-zwa">
+                            <rect key="frame" x="-18" y="200" width="36" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="gm6-eH-gco"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                            <color key="textColor" red="0.02330312692" green="0.019921306520000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.4894313134517766" green="0.41254212983645283" blue="0.30403090684299966" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
-                        <constraint firstAttribute="height" id="Scs-9v-oR5"/>
+                        <constraint firstAttribute="bottom" secondItem="VZB-99-fVa" secondAttribute="bottom" id="0Io-lA-bZp"/>
+                        <constraint firstAttribute="trailing" secondItem="iGT-rW-WSj" secondAttribute="trailing" id="2Gl-D1-WDg"/>
+                        <constraint firstItem="ogp-4V-RCg" firstAttribute="top" secondItem="d0u-4x-6zb" secondAttribute="bottom" constant="8" id="3T8-FX-ix9"/>
+                        <constraint firstItem="MgF-1v-qUV" firstAttribute="width" secondItem="Wki-Ao-WI6" secondAttribute="width" multiplier="0.92" id="5if-9s-YJl"/>
+                        <constraint firstAttribute="width" id="6wG-Dm-IGC"/>
+                        <constraint firstItem="FLk-44-zwa" firstAttribute="centerX" secondItem="Wki-Ao-WI6" secondAttribute="centerX" id="MBW-lf-nVF"/>
+                        <constraint firstItem="zHn-jd-mFY" firstAttribute="centerX" secondItem="Wki-Ao-WI6" secondAttribute="centerX" id="RK1-Kt-xDc"/>
+                        <constraint firstItem="d0u-4x-6zb" firstAttribute="top" secondItem="Wki-Ao-WI6" secondAttribute="top" constant="8" id="UNU-DY-C8T"/>
+                        <constraint firstItem="4Ea-DZ-yy2" firstAttribute="top" secondItem="ogp-4V-RCg" secondAttribute="bottom" constant="8" id="XUF-fU-vhg"/>
+                        <constraint firstItem="iGT-rW-WSj" firstAttribute="bottom" secondItem="VZB-99-fVa" secondAttribute="top" id="YkC-hA-F43"/>
+                        <constraint firstAttribute="trailing" secondItem="VZB-99-fVa" secondAttribute="trailing" id="b5Q-P3-Iuu"/>
+                        <constraint firstItem="umy-aW-JOV" firstAttribute="top" secondItem="FLk-44-zwa" secondAttribute="bottom" constant="8" id="bvw-8z-6dS"/>
+                        <constraint firstItem="VZB-99-fVa" firstAttribute="leading" secondItem="Wki-Ao-WI6" secondAttribute="leading" id="eTJ-FJ-le3"/>
+                        <constraint firstAttribute="height" constant="500" id="i3i-em-0FZ"/>
+                        <constraint firstItem="d0u-4x-6zb" firstAttribute="centerX" secondItem="Wki-Ao-WI6" secondAttribute="centerX" id="iVP-7J-ilU"/>
+                        <constraint firstItem="zHn-jd-mFY" firstAttribute="width" secondItem="Wki-Ao-WI6" secondAttribute="width" multiplier="0.2" id="kQo-PY-hIj"/>
+                        <constraint firstItem="ogp-4V-RCg" firstAttribute="width" secondItem="Wki-Ao-WI6" secondAttribute="width" multiplier="0.92" id="kRh-g4-QiF"/>
+                        <constraint firstItem="FLk-44-zwa" firstAttribute="top" secondItem="MgF-1v-qUV" secondAttribute="bottom" constant="8" id="kvA-ol-gjo"/>
+                        <constraint firstItem="4Ea-DZ-yy2" firstAttribute="centerX" secondItem="Wki-Ao-WI6" secondAttribute="centerX" id="o6R-dO-ADE"/>
+                        <constraint firstItem="zHn-jd-mFY" firstAttribute="top" secondItem="umy-aW-JOV" secondAttribute="bottom" constant="20" id="pga-Kv-7Vk"/>
+                        <constraint firstItem="MgF-1v-qUV" firstAttribute="centerX" secondItem="Wki-Ao-WI6" secondAttribute="centerX" id="q2v-8t-U7X"/>
+                        <constraint firstItem="umy-aW-JOV" firstAttribute="centerX" secondItem="Wki-Ao-WI6" secondAttribute="centerX" id="q5A-uZ-4Di"/>
+                        <constraint firstItem="MgF-1v-qUV" firstAttribute="top" secondItem="4Ea-DZ-yy2" secondAttribute="bottom" constant="8" id="qRm-v9-oOM"/>
+                        <constraint firstItem="ogp-4V-RCg" firstAttribute="centerX" secondItem="Wki-Ao-WI6" secondAttribute="centerX" id="qhl-x4-yET"/>
+                        <constraint firstItem="umy-aW-JOV" firstAttribute="width" secondItem="Wki-Ao-WI6" secondAttribute="width" multiplier="0.92" id="uqW-oJ-hiz"/>
+                        <constraint firstItem="iGT-rW-WSj" firstAttribute="leading" secondItem="Wki-Ao-WI6" secondAttribute="leading" id="zVh-qf-p9R"/>
                     </constraints>
-                </datePicker>
+                </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.4894313134517766" green="0.41254212983645283" blue="0.30403090684299966" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="MgF-1v-qUV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1Hx-1h-oZr"/>
-                <constraint firstItem="J5y-fx-LRW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="1jM-SE-HMh"/>
-                <constraint firstItem="A1Y-H1-uJl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="9Q6-Xe-UKX"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="VZB-99-fVa" secondAttribute="bottom" id="H1k-Vj-cXW"/>
-                <constraint firstItem="MgF-1v-qUV" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="HN4-T5-sHY"/>
-                <constraint firstItem="VZB-99-fVa" firstAttribute="top" secondItem="iGT-rW-WSj" secondAttribute="bottom" id="HfJ-np-Kej"/>
-                <constraint firstItem="iGT-rW-WSj" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="IQg-zP-2Z9"/>
-                <constraint firstItem="J5y-fx-LRW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MKZ-eg-vo0"/>
-                <constraint firstItem="VZB-99-fVa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PTc-kE-OeI"/>
-                <constraint firstItem="A1Y-H1-uJl" firstAttribute="top" secondItem="MgF-1v-qUV" secondAttribute="bottom" id="ZeK-L9-Ttw"/>
-                <constraint firstItem="iGT-rW-WSj" firstAttribute="top" secondItem="A1Y-H1-uJl" secondAttribute="bottom" id="beu-ox-FB7"/>
-                <constraint firstItem="J5y-fx-LRW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dMg-yk-G9S"/>
-                <constraint firstItem="iGT-rW-WSj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="k3i-5w-WoE"/>
-                <constraint firstItem="VZB-99-fVa" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="l5T-oU-ylZ"/>
-                <constraint firstItem="A1Y-H1-uJl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="n9b-nN-fd7"/>
-                <constraint firstItem="MgF-1v-qUV" firstAttribute="top" secondItem="J5y-fx-LRW" secondAttribute="bottom" id="rU2-dG-AqD"/>
+                <constraint firstAttribute="bottom" secondItem="Wki-Ao-WI6" secondAttribute="bottom" id="AyX-vF-3cV"/>
+                <constraint firstItem="A1Y-H1-uJl" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="CvA-OB-Uf9"/>
+                <constraint firstItem="A1Y-H1-uJl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="MhV-w9-o1g"/>
+                <constraint firstItem="Wki-Ao-WI6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Z6S-c4-BFL"/>
+                <constraint firstItem="A1Y-H1-uJl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bkT-fH-uqH"/>
+                <constraint firstItem="A1Y-H1-uJl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="lVj-xq-BMV"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="228.98550724637684" y="182.8125"/>
         </view>
     </objects>
-    <resources>
-        <image name="nebula" width="2339" height="2300"/>
-        <image name="nebula1" width="2500" height="2483"/>
-    </resources>
 </document>

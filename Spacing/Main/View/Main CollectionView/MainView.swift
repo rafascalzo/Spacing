@@ -82,7 +82,7 @@ class MainView: UICollectionViewController, MainViewProtocol {
                //cell.backgroundColor = .purple
         
         cell.clipsToBounds = true
-        let path = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft,.topRight , .bottomLeft, .bottomRight], cornerRadii: CGSize(width: 16, height: 16))
+        let path = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft,.topRight , .bottomLeft, .bottomRight], cornerRadii: CGSize(width: 8, height: 8))
         let shape = CAShapeLayer()
         shape.path = path.cgPath
         cell.layer.mask = shape

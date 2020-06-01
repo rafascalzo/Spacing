@@ -10,6 +10,10 @@ import Foundation
 
 public enum RoverName: CaseIterable {
     
+    public static var allCases: [RoverName] {
+        return [.curiosity, .opportunity, .spirit]
+    }
+    
     case curiosity
     case opportunity
     case spirit
