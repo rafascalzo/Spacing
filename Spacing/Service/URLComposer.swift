@@ -7,20 +7,33 @@
 //
 
 enum BaseUrl {
-    case base, library
+    case base, library, epic
 }
 
 import Alamofire
 struct URLComposer {
     
-    static func buildURL(baseUrl: BaseUrl, from urlType: URLType ,path: String? = nil, queryParameters: [URLQueryItem], apiKey: Bool) -> URLConvertible {
+    static func buildURL(baseUrl: BaseUrl = .base, from urlType: URLType? = nil ,path: String? = nil, queryParameters: [URLQueryItem], apiKey: Bool) -> URLConvertible {
         
         var url: NSURLComponents
-        let baseUrl = baseUrl == .base ? NASAAPI.shared.baseURL : NASAAPI.shared.libraryBaseURL
+        var urlstring = NASAAPI.shared.baseURL
+        switch baseUrl {
+        case .library: urlstring = NASAAPI.shared.libraryBaseURL
+        case .epic: urlstring = NASAAPI.shared.epicBaseURL
+        default: break
+        }
         if let path = path {
-            url = NSURLComponents(string: baseUrl + urlType.url() + path)!
+            if let type = urlType {
+                url = NSURLComponents(string: urlstring + type.url() + path)!
+            } else {
+                url = NSURLComponents(string: urlstring + path)!
+            }
         } else {
-            url = NSURLComponents(string: baseUrl + urlType.url())!
+            if let type = urlType {
+                url = NSURLComponents(string: urlstring + type.url())!
+            } else {
+                url = NSURLComponents(string: urlstring)!
+            }
         }
         var itens = [URLQueryItem]()
         

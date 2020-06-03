@@ -16,7 +16,7 @@ protocol EpicViewProtocol: class {
 }
 
 protocol EpicInputInteractorProtocol: class {
-    
+     func fetchImage(quality: ColorImageQuality, options: EPICParametersOptions, date: Date?)
 }
 
 protocol EpicPresenterProtocol: class {

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>EPIC BASE URL</key>
+	<string>https://epic.gsfc.nasa.gov/api/</string>
 	<key>NSDocumentsFolderUsageDescription</key>
 	<string>&quot;Hey&quot;</string>
 	<key>NSAppTransportSecurity</key>
@@ -13,6 +15,8 @@
 	<string>jTlcbc7KTPbhCwJYAeOoajdkyBHm35cmBHigPAuQ</string>
 	<key>BASE URL</key>
 	<string>https://api.nasa.gov/</string>
+	<key>LIBRARY BASE URL</key>
+	<string>https://images-api.nasa.gov/</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -29,8 +33,6 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LIBRARY BASE URL</key>
-	<string>https://images-api.nasa.gov/</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

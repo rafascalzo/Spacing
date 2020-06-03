@@ -40,6 +40,10 @@ class NASAAPI: NSObject {
         return Bundle.main.infoDictionary!["LIBRARY BASE URL"] as! String
     }
     
+    var epicBaseURL: String {
+        return Bundle.main.infoDictionary!["EPIC BASE URL"] as! String
+    }
+    
     static var shared = NASAAPI()
     
     func printAPIKey() {
@@ -81,6 +85,46 @@ class NASAAPI: NSObject {
             case .success(_):
                 do {
                     let decodedObject = try JSONDecoder().decode(T.self, from: data)
+                    completion(decodedObject, nil)
+                } catch {
+                    completion(nil, error.localizedDescription)
+                }
+            case .failure(let error):
+                completion(nil, error.localizedDescription)
+            }
+        }
+    }
+    
+    func requestObjectList<T: Codable>(url: URLConvertible, method: HTTPMethod = .get,_ parameters: EncodableObject? = nil, encoding: ParameterEncoding = JSONEncoding.default, header: HTTPHeaders? = nil, completion: @escaping([T]?, String?) -> Void) {
+        guard Network.isConnectedToNetwork() else { completion(nil, "no_connection"); return}
+        var headers = [String:String]()
+        
+        switch header {
+        case .none:
+            headers = [:]
+        default:
+            break
+        }
+        
+        var parametersDictionary: [String:Any]?
+        
+        if let parameters = parameters {
+            do {
+                let encodedParameters = try JSONEncoder().encode(parameters)
+                parametersDictionary = try JSONSerialization.jsonObject(with: encodedParameters, options: []) as? [String:Any]
+            } catch {
+                completion(nil, error.localizedDescription)
+            }
+        }
+        
+        request(url, method: method, parametersDictionary, encoding: encoding, headers: HTTPHeaders(headers)).validate().responseJSON { response in
+            print("resposta", response)
+            guard let data = response.data else { completion(nil, "error_default"); return }
+            
+            switch response.result {
+            case .success(_):
+                do {
+                    let decodedObject = try JSONDecoder().decode([T].self, from: data)
                     completion(decodedObject, nil)
                 } catch {
                     completion(nil, error.localizedDescription)

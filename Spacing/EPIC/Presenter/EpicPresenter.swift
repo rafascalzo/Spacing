@@ -15,6 +15,7 @@ class EpicPresenter: EpicPresenterProtocol {
     
     func viewDidLoad() {
         view?.render()
+        interactor?.fetchImage(quality: .natural, options: .most_recent, date: nil)
     }
 }
 
