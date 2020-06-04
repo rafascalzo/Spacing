@@ -65,9 +65,8 @@ class MarsRoverView: UIViewController , MarsRoverViewProtocol, UICollectionViewD
         let calendarTap = UITapGestureRecognizer(target: self, action: #selector(handleCalendarTapped))
         calendarTap.cancelsTouchesInView = false
         dateTextField.addGestureRecognizer(calendarTap)
-        let searchImage = UIImage(named: "search")
-        let searchButton = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearchTapped))
-        searchButton.tintColor = UIColor(hue: 0.67, saturation: 0.677, brightness: 0.877, alpha: 1)
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearchTapped))
+        searchButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.graffiti], for: .normal)
         navigationItem.rightBarButtonItem = searchButton
         
     }

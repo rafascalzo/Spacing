@@ -13,10 +13,15 @@ protocol EpicViewProtocol: class {
     var presenter: EpicPresenterProtocol? { get set }
     
     func render()
+    func didFetchImages(_ model: [EPICModel])
+    func show(error: String)
+    func showLoading()
+    func removeLoading()
 }
 
 protocol EpicInputInteractorProtocol: class {
-     func fetchImage(quality: ColorImageQuality, options: EPICParametersOptions, date: Date?)
+    var output: EpicOutputInteractorProtocol? { get set }
+    func fetchImage(quality: ColorImageQuality, options: EPICParametersOptions, date: Date?)
 }
 
 protocol EpicPresenterProtocol: class {
@@ -30,6 +35,8 @@ protocol EpicPresenterProtocol: class {
 
 protocol EpicOutputInteractorProtocol: class {
     
+    func didFetchImageData(_ model: [EPICModel])
+    func show(error: String)
 }
 
 protocol EpicWireframeProtocol: class {

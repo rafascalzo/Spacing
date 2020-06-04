@@ -55,6 +55,8 @@ struct EpicQueryingParameters: Codable {
 import Foundation
 class EpicInputInteractor: EpicInputInteractorProtocol {
     
+    weak var output: EpicOutputInteractorProtocol?
+    
     func fetchImage(quality: ColorImageQuality, options: EPICParametersOptions, date: Date? = nil) {
        // var stringDate: String? = nil
         
@@ -64,7 +66,7 @@ class EpicInputInteractor: EpicInputInteractorProtocol {
             if let error = error {
                 print("XIIIIII", error)
             } else if let data = data {
-                print("EEEEE", data)
+                self.output?.didFetchImageData(data)
             }
         }
         

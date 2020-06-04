@@ -17,6 +17,7 @@ class EpicWireframe: EpicWireframeProtocol {
         viewRef.presenter = presenter
         viewRef.presenter?.view = viewRef
         viewRef.presenter?.interactor = EpicInputInteractor()
+        viewRef.presenter?.interactor?.output = presenter
         viewRef.presenter?.wireframe = EpicWireframe()
         viewRef.presenter?.wireframe?.controller = viewRef
     }

@@ -21,4 +21,11 @@ class EpicPresenter: EpicPresenterProtocol {
 
 extension EpicPresenter: EpicOutputInteractorProtocol {
     
+    func didFetchImageData(_ model: [EPICModel]) {
+        view?.didFetchImages(model)
+    }
+    
+    func show(error: String) {
+        view?.show(error: error.localized)
+    }
 }

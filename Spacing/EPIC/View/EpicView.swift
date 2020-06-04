@@ -8,9 +8,33 @@
 
 import UIKit
 
+private let epicCellReuseIdentifier = "EpicCell"
+
 class EpicView: UIViewController, EpicViewProtocol {
     
+    func didFetchImages(_ model: [EPICModel]) {
+        epicModel = model
+        epicCollectionView.reloadData()
+    }
+    
+    var epicModel = [EPICModel]()
+    
+    func show(error: String) {
+        showAlert(error)
+    }
+    
+    func showLoading() {
+        showActivityIndicator()
+    }
+    
+    func removeLoading() {
+        removeActivityIndicator()
+    }
+    
+   
     var presenter: EpicPresenterProtocol?
+    
+    @IBOutlet var epicCollectionView: UICollectionView!
     
     @IBOutlet var datePickerView: UIDatePicker!
     @IBOutlet var datePickerViewHeightConstraint: NSLayoutConstraint!
@@ -40,8 +64,12 @@ class EpicView: UIViewController, EpicViewProtocol {
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearch))
         searchButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.purple], for: .normal)
         navigationItem.rightBarButtonItem = searchButton
-        
-        
+    }
+    
+    override func loadView() {
+        super.loadView()
+        let nib = UINib(nibName: "EPICCell", bundle: .main)
+        epicCollectionView.register(nib, forCellWithReuseIdentifier: epicCellReuseIdentifier)
     }
     
     override func viewDidLoad() {
@@ -59,4 +87,75 @@ class EpicView: UIViewController, EpicViewProtocol {
             self.datePickerDoneToolBarHeightConstraint.constant = 44
           })
       }
+}
+
+extension EpicView: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return epicModel.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: epicCellReuseIdentifier, for: indexPath) as! EPICCell
+        
+        let selected = epicModel[indexPath.item]
+        
+        let name = selected.imageName
+        let dateFragment = selected.date.components(separatedBy: "-")
+        let urlstring = "https://epic.gsfc.nasa.gov/archive/natural/\(dateFragment[0])/\(dateFragment[1])/\(dateFragment[2].components(separatedBy: " ")[0])/png/\(name).png"
+        print(urlstring)
+        Cache.downloadImage(urlString: urlstring) {
+            cell.epicImageView.image = $0
+        }
+        cell.earthLatitudeLabel.text = "Latitude: \(selected.coordinates.satelliteFocusedCoordinates.latitude)"
+        cell.earthLongitudeLabel.text = "Longitude: \(selected.coordinates.satelliteFocusedCoordinates.longitude)"
+        cell.sunXPositionLabel.text = "X \(selected.coordinates.sunPosition.x)"
+        cell.sunYPositionLabel.text = "Y \(selected.coordinates.sunPosition.y)"
+        cell.sunZPositionLabel.text = "Z \(selected.coordinates.sunPosition.z)"
+        cell.moonXPositionLabel.text = "X: \(selected.coordinates.moonPosition.x)"
+        cell.moonYPositionLabel.text = "Y: \(selected.coordinates.moonPosition.y)"
+        cell.moonZPositionLabel.text = "Z: \(selected.coordinates.moonPosition.z)"
+        cell.satelliteXPositionLabel.text = "X \(selected.coordinates.satellitePosition.x)"
+        cell.satelliteYPositionLabel.text = "Y \(selected.coordinates.satellitePosition.y)"
+        cell.satelliteZPositionLabel.text = "Z \(selected.coordinates.satellitePosition.z)"
+        return cell
+    }
+}
+
+extension EpicView: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! EPICCell
+        if let point = cell.touchLocation {
+            if cell.leftArrow.bounds.contains(point) {
+                print("arrow left")
+                let previousItem = indexPath.item - 1
+                if (previousItem >= 0) {
+                    let previousIndexPath = IndexPath(item: previousItem, section: 0)
+                    collectionView.scrollToItem(at: previousIndexPath, at: .centeredHorizontally, animated: true)
+                } else {
+                    print("nope")
+                }
+            } else if cell.rightArrow.frame.contains(point) {
+                print("arrow right")
+                let nextItem = indexPath.item + 1
+                if (epicModel.count > nextItem) {
+                    let nextIndexPath = IndexPath(item: nextItem, section: 0)
+                    collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+                } else {
+                    print("nope")
+                }
+            } else {
+                let text = epicModel[indexPath.item].caption
+                performZoomInFor(startingImageView: cell.epicImageView, imageDescription: text)
+            }
+        }
+    }
+}
+
+extension EpicView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: epicCollectionView.frame.width, height: epicCollectionView.frame.height)
+    }
 }

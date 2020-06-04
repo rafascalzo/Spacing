@@ -14,6 +14,7 @@
                 <outlet property="datePickerDoneToolBarHeightConstraint" destination="PNP-QC-8zI" id="WUe-3b-zSk"/>
                 <outlet property="datePickerView" destination="cMS-tC-Dio" id="pNr-Eb-AKB"/>
                 <outlet property="datePickerViewHeightConstraint" destination="YQv-se-BTL" id="dzj-s5-6vk"/>
+                <outlet property="epicCollectionView" destination="Aru-Hb-cXy" id="hl2-k5-2rs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,12 +25,14 @@
             <subviews>
                 <datePicker alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cMS-tC-Dio">
                     <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                    <color key="backgroundColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                     <constraints>
                         <constraint firstAttribute="height" id="YQv-se-BTL"/>
                     </constraints>
                 </datePicker>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMl-PQ-aM1">
                     <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                    <color key="backgroundColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                     <constraints>
                         <constraint firstAttribute="height" id="PNP-QC-8zI"/>
                     </constraints>
@@ -49,13 +52,33 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Aru-Hb-cXy">
+                    <rect key="frame" x="0.0" y="44" width="414" height="650"/>
+                    <color key="backgroundColor" red="0.01214675592" green="0.0" blue="0.1057794093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="650" id="PL8-S9-QXA"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KPU-XT-vAf">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="n0E-kh-YO8"/>
+                        <outlet property="delegate" destination="-1" id="zRh-eK-2zj"/>
+                    </connections>
+                </collectionView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.01214675592" green="0.0" blue="0.1057794093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="cMS-tC-Dio" secondAttribute="bottom" id="4I8-hP-cxb"/>
                 <constraint firstItem="zMl-PQ-aM1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GVf-eI-vvm"/>
                 <constraint firstItem="cMS-tC-Dio" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Psb-dE-CXx"/>
+                <constraint firstItem="Aru-Hb-cXy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ukm-di-XhN"/>
+                <constraint firstItem="Aru-Hb-cXy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XcU-lJ-3xR"/>
                 <constraint firstItem="zMl-PQ-aM1" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="afq-VV-tbn"/>
+                <constraint firstItem="Aru-Hb-cXy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hj7-fV-h6L"/>
                 <constraint firstItem="cMS-tC-Dio" firstAttribute="top" secondItem="zMl-PQ-aM1" secondAttribute="bottom" id="nzc-aG-Dmr"/>
                 <constraint firstItem="cMS-tC-Dio" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s3L-ar-efz"/>
             </constraints>

@@ -88,6 +88,8 @@
 		8956684B246F8892002E615E /* Spacing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89566849246F8892002E615E /* Spacing.xcdatamodeld */; };
 		8956684D246F88B7002E615E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956684C246F88B7002E615E /* CoreDataManager.swift */; };
 		899DCC4D248743C400F3C920 /* NASAAPI.EPIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899DCC4C248743C400F3C920 /* NASAAPI.EPIC.swift */; };
+		899DCC502488583100F3C920 /* EPICCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899DCC4E2488583100F3C920 /* EPICCell.swift */; };
+		899DCC512488583100F3C920 /* EPICCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899DCC4F2488583100F3C920 /* EPICCell.xib */; };
 		A86B98B781A6A18D35C95D39 /* libPods-Spacing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AEBA31F8476EDD26601979 /* libPods-Spacing.a */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +182,8 @@
 		8956684A246F8892002E615E /* Spacing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spacing.xcdatamodel; sourceTree = "<group>"; };
 		8956684C246F88B7002E615E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		899DCC4C248743C400F3C920 /* NASAAPI.EPIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPI.EPIC.swift; sourceTree = "<group>"; };
+		899DCC4E2488583100F3C920 /* EPICCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICCell.swift; sourceTree = "<group>"; };
+		899DCC4F2488583100F3C920 /* EPICCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EPICCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -632,6 +636,8 @@
 			children = (
 				894962C72469E7250023ADB2 /* EpicView.swift */,
 				894962C82469E7250023ADB2 /* EpicView.xib */,
+				899DCC4E2488583100F3C920 /* EPICCell.swift */,
+				899DCC4F2488583100F3C920 /* EPICCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -821,6 +827,7 @@
 				8926C4612467AFA7009E492F /* LaunchScreen.storyboard in Resources */,
 				8926C4BC24686E56009E492F /* PictureOfTheDayView.xib in Resources */,
 				8926C4D62468B36D009E492F /* Localizable.strings in Resources */,
+				899DCC512488583100F3C920 /* EPICCell.xib in Resources */,
 				894ABE01247DED9200001270 /* MarsRoverView.xib in Resources */,
 				894962AC2468FFAB0023ADB2 /* MarsRoverCell.xib in Resources */,
 				8926C45E2467AFA7009E492F /* Assets.xcassets in Resources */,
@@ -893,6 +900,7 @@
 				894962A62468FDB90023ADB2 /* MarsRoverWireframe.swift in Sources */,
 				894962E5246A44400023ADB2 /* EarthWireframe.swift in Sources */,
 				8926C4CD2468722E009E492F /* MainInputInteractor.swift in Sources */,
+				899DCC502488583100F3C920 /* EPICCell.swift in Sources */,
 				8926C4C224686EF5009E492F /* PictureOfTheDayInputInteractor.swift in Sources */,
 				8926C4B424686DA0009E492F /* LibrarySearchParameters.swift in Sources */,
 				8926C494246868F4009E492F /* NASAAPI.swift in Sources */,

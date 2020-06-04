@@ -48,11 +48,27 @@ extension NASAAPI {
  {
  lat (Latitude)
  lon (Longitude)
- dscovr_j2000_position
+ centroid_coordinates (Geographical coordinates that the satellite is looking at)
+ dscovr_j2000_position (Position of the satellite in space)
  lunar_j2000_position   (Position of the moon in space)
  sun_j2000_position (Position of the sun in space)
  attitude_quaternions   (Satellite attitude)
  }
+ */
+
+/*
+ IMAGE LOCATIONS
+ All of our imagery is stored in an archival directory subdivided by collection, year, month, day, and image type. There are three separate image types available: full resolution PNG, half-resolution JPG, and thumbnails. Paths to imagery can be found using the following schema:
+
+ Site Name    Archive    Collection    Year    Month    Day    Image Type    File Name
+ https://epic.gsfc.nasa.gov    archive    natural    2016    10    31    png    epic_1b_20161031xxxx.png
+ https://epic.gsfc.nasa.gov    archive    natural    2016    10    31    jpg    epic_1b_20161031xxxx.jpg
+ https://epic.gsfc.nasa.gov    archive    natural    2016    10    31    thumbs    epic_1b_20161031xxxx.jpg
+ https://epic.gsfc.nasa.gov    archive    enhanced    2016    10    31    png    epic_RGB_20161031xxxx.png
+ https://epic.gsfc.nasa.gov    archive    enhanced    2016    10    31    jpg    epic_RGB_20161031xxxx.jpg
+ https://epic.gsfc.nasa.gov    archive    enhanced    2016    10    31    thumbs    epic_RGB_20161031xxxx.jpg
+
+ Note that the x's in the file name represent areas of variance.
  */
 
 struct EPICModel: Codable {
