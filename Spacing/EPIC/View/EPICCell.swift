@@ -2,8 +2,8 @@
 //  EPICCell.swift
 //  Spacing
 //
-//  Created by FulltrackMobile on 03/06/20.
-//  Copyright © 2020 rvsm. All rights reserved.
+//  Created by Rafael Scalzo on 03/06/20.
+//  Copyright © 2020 Rafael Scalzo. All rights reserved.
 //
 
 import UIKit
@@ -44,5 +44,4 @@ class EPICCell: UICollectionViewCell {
            let touch = touches.first
            self.touchLocation = touch?.location(in: touch?.view)
     }
-
 }

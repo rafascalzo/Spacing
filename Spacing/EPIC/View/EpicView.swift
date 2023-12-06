@@ -31,7 +31,6 @@ class EpicView: UIViewController, EpicViewProtocol {
         removeActivityIndicator()
     }
     
-   
     var presenter: EpicPresenterProtocol?
     
     @IBOutlet var epicCollectionView: UICollectionView!
@@ -42,7 +41,6 @@ class EpicView: UIViewController, EpicViewProtocol {
     @IBOutlet var datePickerDoneToolBarHeightConstraint: NSLayoutConstraint!
     
     @IBAction func datePickerCancelToolbar(_ sender: Any) {
-        print("cancel")
         dismissDatePicker()
     }
     
@@ -80,13 +78,13 @@ class EpicView: UIViewController, EpicViewProtocol {
     }
     
     @objc func handleSearch(_ sender: UIBarButtonItem! = nil) {
-          UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.datePickerView.alpha = 1
             self.datePickerViewHeightConstraint.constant = 300
             self.datePickerDoneToolBar.alpha = 1
             self.datePickerDoneToolBarHeightConstraint.constant = 44
-          })
-      }
+        })
+    }
 }
 
 extension EpicView: UICollectionViewDataSource {
@@ -128,23 +126,19 @@ extension EpicView: UICollectionViewDelegate {
         let cell = collectionView.cellForItem(at: indexPath) as! EPICCell
         if let point = cell.touchLocation {
             if cell.leftArrow.bounds.contains(point) {
-                print("arrow left")
                 let previousItem = indexPath.item - 1
                 if (previousItem >= 0) {
                     let previousIndexPath = IndexPath(item: previousItem, section: 0)
                     collectionView.scrollToItem(at: previousIndexPath, at: .centeredHorizontally, animated: true)
-                } else {
-                    print("nope")
                 }
             } else if cell.rightArrow.frame.contains(point) {
-                print("arrow right")
+                
                 let nextItem = indexPath.item + 1
                 if (epicModel.count > nextItem) {
                     let nextIndexPath = IndexPath(item: nextItem, section: 0)
                     collectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
-                } else {
-                    print("nope")
                 }
+                
             } else {
                 let text = epicModel[indexPath.item].caption
                 performZoomInFor(startingImageView: cell.epicImageView, imageDescription: text)

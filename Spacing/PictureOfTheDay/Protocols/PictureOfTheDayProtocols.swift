@@ -2,8 +2,8 @@
 //  PictureOfTheDayProtocols.swift
 //  Spacing
 //
-//  Created by rvsm on 10/05/20.
-//  Copyright © 2020 rvsm. All rights reserved.
+//  Created by Rafael Scalzo on 10/05/20.
+//  Copyright © 2020 Rafael Scalzo. All rights reserved.
 //
 
 import Foundation

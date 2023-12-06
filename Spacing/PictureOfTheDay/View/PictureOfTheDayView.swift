@@ -45,12 +45,10 @@ class PictureOfTheDayView: UIViewController, PictureOfTheDayViewProtocol {
         if sender.state == .began || sender.state == .changed {
             sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
             sender.scale = 1.0
-            
         }
     }
     
     @objc func handleImageTapped(_ sender: Any) {
-        print("testanoooo")
         performZoomInFor(startingImageView: imageOfTheDayImageView, imageDescription: "Picture of the Day")
     }
     
@@ -78,31 +76,31 @@ class PictureOfTheDayView: UIViewController, PictureOfTheDayViewProtocol {
     }
     
     func configure(content: PictureOfTheDay,for mediaType: MediaType) {
-           switch mediaType {
-           case .video:
-               imageOfTheDayImageView.isHidden = true
-                imageOfTheDayVideoView.isHidden = false
-               
-               imageOfTheDayVideoView = WKWebView(frame: imageOfTheDayVideoView.superview!.bounds, configuration: WKWebViewConfiguration())
-               imageOfTheDayVideoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-              
-               imageOfTheDayVideoView.load(URLRequest(url: URL(string: content.urlString)!))
-           default:
-                imageOfTheDayVideoView.isHidden = true
-               imageOfTheDayImageView.isHidden = false
-               if let url = URL(string: content.urlString) {
-                   if let data = try? Data(contentsOf: url) {
-                       let image = UIImage(data: data)
-                       imageOfTheDayImageView.image = image
-                   }
-               }
-               /*
-                Load image on wkwebview
-                videoView = WKWebView(frame: mediaContainerView.bounds, configuration: WKWebViewConfiguration())
-                videoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                self.mediaContainerView.addSubview(videoView)
-                videoView.load(URLRequest(url: URL(string: content.urlString)!))
-                */
-           }
-       }
+        switch mediaType {
+        case .video:
+            imageOfTheDayImageView.isHidden = true
+            imageOfTheDayVideoView.isHidden = false
+            
+            imageOfTheDayVideoView = WKWebView(frame: imageOfTheDayVideoView.superview!.bounds, configuration: WKWebViewConfiguration())
+            imageOfTheDayVideoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            imageOfTheDayVideoView.load(URLRequest(url: URL(string: content.urlString)!))
+        default:
+            imageOfTheDayVideoView.isHidden = true
+            imageOfTheDayImageView.isHidden = false
+            if let url = URL(string: content.urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    let image = UIImage(data: data)
+                    imageOfTheDayImageView.image = image
+                }
+            }
+            /*
+             Load image on wkwebview
+             videoView = WKWebView(frame: mediaContainerView.bounds, configuration: WKWebViewConfiguration())
+             videoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+             self.mediaContainerView.addSubview(videoView)
+             videoView.load(URLRequest(url: URL(string: content.urlString)!))
+             */
+        }
+    }
 }

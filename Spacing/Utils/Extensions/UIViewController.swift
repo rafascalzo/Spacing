@@ -146,15 +146,15 @@ extension UIViewController {
     
     @objc func handlePan(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
-
+        
         // 2
         guard let gestureView = sender.view else {
-          return
+            return
         }
-
+        
         gestureView.center = CGPoint(
-          x: gestureView.center.x + translation.x,
-          y: gestureView.center.y + translation.y
+            x: gestureView.center.x + translation.x,
+            y: gestureView.center.y + translation.y
         )
         // 3
         sender.setTranslation(.zero, in: view)
@@ -162,14 +162,14 @@ extension UIViewController {
     
     @objc func handlePinch(_ sender: UIPinchGestureRecognizer) {
         guard sender.view != nil else { return }
-               NSLog("pinch test")
-               if sender.state == .began || sender.state == .changed {
-                
-               
-                   sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
-                   sender.scale = 1.0
-                   
-               }
+        NSLog("pinch test")
+        if sender.state == .began || sender.state == .changed {
+            
+            
+            sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
+            sender.scale = 1.0
+            
+        }
     }
     
     @objc func handleZoomOut(_ gesture: UITapGestureRecognizer) {

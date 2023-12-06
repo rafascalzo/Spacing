@@ -2,8 +2,8 @@
 //  EpicWireframe.swift
 //  Spacing
 //
-//  Created by rvsm on 11/05/20.
-//  Copyright © 2020 rvsm. All rights reserved.
+//  Created by Rafael Scalzo on 11/05/20.
+//  Copyright © 2020 Rafael Scalzo. All rights reserved.
 //
 
 import Foundation
@@ -13,6 +13,7 @@ class EpicWireframe: EpicWireframeProtocol {
     weak var controller: EpicView?
     
     static func createModule(viewRef: EpicView) {
+        
         let presenter: EpicPresenterProtocol & EpicOutputInteractorProtocol = EpicPresenter()
         viewRef.presenter = presenter
         viewRef.presenter?.view = viewRef

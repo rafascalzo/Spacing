@@ -33,7 +33,6 @@ class VideoView: UIView {
     
     func load(url: String) {
         if let videoURL = URL(string: url) {
-            print("tem url")
             player = AVPlayer(url: videoURL)
             playerLayer = AVPlayerLayer(player: player)
             
@@ -48,7 +47,6 @@ class VideoView: UIView {
     }
     
     func play() {
-        print("playing")
         if player?.timeControlStatus != AVPlayer.TimeControlStatus.playing {
             player?.play()
         }

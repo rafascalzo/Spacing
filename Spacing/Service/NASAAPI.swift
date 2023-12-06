@@ -78,7 +78,7 @@ class NASAAPI: NSObject {
         }
         
         request(url, method: method, parametersDictionary, encoding: encoding, headers: HTTPHeaders(headers)).validate().responseJSON { response in
-            print("resposta", response)
+            print(response)
             guard let data = response.data else { completion(nil, "error_default"); return }
             
             switch response.result {
@@ -118,7 +118,7 @@ class NASAAPI: NSObject {
         }
         
         request(url, method: method, parametersDictionary, encoding: encoding, headers: HTTPHeaders(headers)).validate().responseJSON { response in
-            print("resposta", response)
+            print(response)
             guard let data = response.data else { completion(nil, "error_default"); return }
             
             switch response.result {
@@ -158,7 +158,7 @@ class NASAAPI: NSObject {
         }
         
         request(url, method: method, parametersDictionary, encoding: encoding, headers: HTTPHeaders(headers)).validate().responseString { response in
-            print("resposta", response)
+            print(response)
             guard let data = response.data else { completion(false, "error_default"); return }
             let base = data.base64EncodedData()
             
@@ -172,7 +172,7 @@ class NASAAPI: NSObject {
             } else {
                 var message: String?
                 if let urls = String(data: data, encoding: .unicode) {
-                    print(urls, "kkkkkk")
+                    print(urls)
                 }
                 do {
                     let jsonResult = try JSONSerialization.jsonObject(with: data, options: [.mutableLeaves, JSONSerialization.ReadingOptions.mutableContainers])

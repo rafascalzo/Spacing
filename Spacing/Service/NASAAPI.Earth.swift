@@ -35,7 +35,7 @@ extension NASAAPI {
             // queryParameters.append(URLQueryItem(name: "cloud_score", value: parameters.cloudScore ? "true" : "false"))
             
             let url = URLComposer.buildURL(baseUrl: .base, from: .EARTH_IMAGERY, path: nil, queryParameters: queryParameters, apiKey: true)
-            print(url)
+            
             NASAAPI.shared.requestString(url: url, method: .get, nil, encoding: URLEncoding.default, header: .none, completion: completion)
             
         }

@@ -2,8 +2,8 @@
 //  EpicInputInteractor.swift
 //  Spacing
 //
-//  Created by rvsm on 11/05/20.
-//  Copyright © 2020 rvsm. All rights reserved.
+//  Created by Rafael Scalzo on 11/05/20.
+//  Copyright © 2020 Rafael Scalzo. All rights reserved.
 //
 
 /*
@@ -64,7 +64,7 @@ class EpicInputInteractor: EpicInputInteractorProtocol {
         
         NASAAPI.EPICAPI.fetchImagery(parameters: parameters) { (data, error) in
             if let error = error {
-                print("XIIIIII", error)
+                print(error)
             } else if let data = data {
                 self.output?.didFetchImageData(data)
             }
